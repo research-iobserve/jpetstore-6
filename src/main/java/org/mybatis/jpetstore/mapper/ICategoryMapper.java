@@ -1,6 +1,6 @@
 /***************************************************************************
  * Copyright (C) 2010-2017 the original author or authors.
- *               iObserve Project (https://www.iobserve-devops.net)
+ *               2017 iObserve Project (https://www.iobserve-devops.net)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,20 @@ import org.mybatis.jpetstore.domain.Category;
  */
 public interface ICategoryMapper {
 
+    /**
+     * Returns all categories.
+     *
+     * @return category list
+     */
     List<Category> getCategoryList();
 
+    /**
+     * get category by id.
+     *
+     * @param categoryId
+     *            category id
+     * @return the category or null
+     */
     Category getCategory(String categoryId);
 
 }
