@@ -25,54 +25,54 @@ import java.math.BigDecimal;
  */
 public class CartItem implements Serializable {
 
-  private static final long serialVersionUID = 6620528781626504362L;
+    private static final long serialVersionUID = 6620528781626504362L;
 
-  private Item item;
-  private int quantity;
-  private boolean inStock;
-  private BigDecimal total;
+    private Item item;
+    private int quantity;
+    private boolean inStock;
+    private BigDecimal total;
 
-  public boolean isInStock() {
-    return inStock;
-  }
-
-  public void setInStock(boolean inStock) {
-    this.inStock = inStock;
-  }
-
-  public BigDecimal getTotal() {
-    return total;
-  }
-
-  public Item getItem() {
-    return item;
-  }
-
-  public void setItem(Item item) {
-    this.item = item;
-    calculateTotal();
-  }
-
-  public int getQuantity() {
-    return quantity;
-  }
-
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-    calculateTotal();
-  }
-
-  public void incrementQuantity() {
-    quantity++;
-    calculateTotal();
-  }
-
-  private void calculateTotal() {
-    if (item != null && item.getListPrice() != null) {
-      total = item.getListPrice().multiply(new BigDecimal(quantity));
-    } else {
-      total = null;
+    public boolean isInStock() {
+        return this.inStock;
     }
-  }
+
+    public void setInStock(final boolean inStock) {
+        this.inStock = inStock;
+    }
+
+    public BigDecimal getTotal() {
+        return this.total;
+    }
+
+    public Item getItem() {
+        return this.item;
+    }
+
+    public void setItem(final Item item) {
+        this.item = item;
+        this.calculateTotal();
+    }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(final int quantity) {
+        this.quantity = quantity;
+        this.calculateTotal();
+    }
+
+    public void incrementQuantity() {
+        this.quantity++;
+        this.calculateTotal();
+    }
+
+    private void calculateTotal() {
+        if ((this.item != null) && (this.item.getListPrice() != null)) {
+            this.total = this.item.getListPrice().multiply(new BigDecimal(this.quantity));
+        } else {
+            this.total = null;
+        }
+    }
 
 }

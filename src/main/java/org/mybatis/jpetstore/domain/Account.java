@@ -26,171 +26,171 @@ import net.sourceforge.stripes.validation.Validate;
  */
 public class Account implements Serializable {
 
-  private static final long serialVersionUID = 8751282105532159742L;
+    private static final long serialVersionUID = 8751282105532159742L;
 
-  private String username;
-  private String password;
-  private String email;
-  private String firstName;
-  private String lastName;
-  private String status;
-  private String address1;
-  private String address2;
-  private String city;
-  private String state;
-  private String zip;
-  private String country;
-  private String phone;
-  private String favouriteCategoryId;
-  private String languagePreference;
-  private boolean listOption;
-  private boolean bannerOption;
-  private String bannerName;
+    private String username;
+    private String password;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String status;
+    private String address1;
+    private String address2;
+    private String city;
+    private String state;
+    private String zip;
+    private String country;
+    private String phone;
+    private String favouriteCategoryId;
+    private String languagePreference;
+    private boolean listOption;
+    private boolean bannerOption;
+    private String bannerName;
 
-  public String getUsername() {
-    return username;
-  }
+    public String getUsername() {
+        return this.username;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public void setUsername(final String username) {
+        this.username = username;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    public String getPassword() {
+        return this.password;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public void setPassword(final String password) {
+        this.password = password;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getEmail() {
+        return this.email;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public void setEmail(final String email) {
+        this.email = email;
+    }
 
-  public String getFirstName() {
-    return firstName;
-  }
+    public String getFirstName() {
+        return this.firstName;
+    }
 
-  @Validate(required = true, on = { "newAccount", "editAccount" })
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+    @Validate(required = true, on = { "newAccount", "editAccount" })
+    public void setFirstName(final String firstName) {
+        this.firstName = firstName;
+    }
 
-  public String getLastName() {
-    return lastName;
-  }
+    public String getLastName() {
+        return this.lastName;
+    }
 
-  @Validate(required = true, on = { "newAccount", "editAccount" })
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+    @Validate(required = true, on = { "newAccount", "editAccount" })
+    public void setLastName(final String lastName) {
+        this.lastName = lastName;
+    }
 
-  public String getStatus() {
-    return status;
-  }
+    public String getStatus() {
+        return this.status;
+    }
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
+    public void setStatus(final String status) {
+        this.status = status;
+    }
 
-  public String getAddress1() {
-    return address1;
-  }
+    public String getAddress1() {
+        return this.address1;
+    }
 
-  public void setAddress1(String address1) {
-    this.address1 = address1;
-  }
+    public void setAddress1(final String address1) {
+        this.address1 = address1;
+    }
 
-  public String getAddress2() {
-    return address2;
-  }
+    public String getAddress2() {
+        return this.address2;
+    }
 
-  public void setAddress2(String address2) {
-    this.address2 = address2;
-  }
+    public void setAddress2(final String address2) {
+        this.address2 = address2;
+    }
 
-  public String getCity() {
-    return city;
-  }
+    public String getCity() {
+        return this.city;
+    }
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+    public void setCity(final String city) {
+        this.city = city;
+    }
 
-  public String getState() {
-    return state;
-  }
+    public String getState() {
+        return this.state;
+    }
 
-  public void setState(String state) {
-    this.state = state;
-  }
+    public void setState(final String state) {
+        this.state = state;
+    }
 
-  public String getZip() {
-    return zip;
-  }
+    public String getZip() {
+        return this.zip;
+    }
 
-  public void setZip(String zip) {
-    this.zip = zip;
-  }
+    public void setZip(final String zip) {
+        this.zip = zip;
+    }
 
-  public String getCountry() {
-    return country;
-  }
+    public String getCountry() {
+        return this.country;
+    }
 
-  public void setCountry(String country) {
-    this.country = country;
-  }
+    public void setCountry(final String country) {
+        this.country = country;
+    }
 
-  public String getPhone() {
-    return phone;
-  }
+    public String getPhone() {
+        return this.phone;
+    }
 
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
+    public void setPhone(final String phone) {
+        this.phone = phone;
+    }
 
-  public String getFavouriteCategoryId() {
-    return favouriteCategoryId;
-  }
+    public String getFavouriteCategoryId() {
+        return this.favouriteCategoryId;
+    }
 
-  public void setFavouriteCategoryId(String favouriteCategoryId) {
-    this.favouriteCategoryId = favouriteCategoryId;
-  }
+    public void setFavouriteCategoryId(final String favouriteCategoryId) {
+        this.favouriteCategoryId = favouriteCategoryId;
+    }
 
-  public String getLanguagePreference() {
-    return languagePreference;
-  }
+    public String getLanguagePreference() {
+        return this.languagePreference;
+    }
 
-  public void setLanguagePreference(String languagePreference) {
-    this.languagePreference = languagePreference;
-  }
+    public void setLanguagePreference(final String languagePreference) {
+        this.languagePreference = languagePreference;
+    }
 
-  public boolean isListOption() {
-    return listOption;
-  }
+    public boolean isListOption() {
+        return this.listOption;
+    }
 
-  public void setListOption(boolean listOption) {
-    this.listOption = listOption;
-  }
+    public void setListOption(final boolean listOption) {
+        this.listOption = listOption;
+    }
 
-  public boolean isBannerOption() {
-    return bannerOption;
-  }
+    public boolean isBannerOption() {
+        return this.bannerOption;
+    }
 
-  public void setBannerOption(boolean bannerOption) {
-    this.bannerOption = bannerOption;
-  }
+    public void setBannerOption(final boolean bannerOption) {
+        this.bannerOption = bannerOption;
+    }
 
-  public String getBannerName() {
-    return bannerName;
-  }
+    public String getBannerName() {
+        return this.bannerName;
+    }
 
-  public void setBannerName(String bannerName) {
-    this.bannerName = bannerName;
-  }
+    public void setBannerName(final String bannerName) {
+        this.bannerName = bannerName;
+    }
 
 }

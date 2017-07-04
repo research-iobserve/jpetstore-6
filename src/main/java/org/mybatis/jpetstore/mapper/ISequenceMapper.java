@@ -15,19 +15,16 @@
  */
 package org.mybatis.jpetstore.mapper;
 
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.Category;
+import org.mybatis.jpetstore.domain.Sequence;
 
 /**
- * The Interface CategoryMapper.
+ * The Interface SequenceMapper.
  *
  * @author Eduardo Macarron
  */
-public interface CategoryMapper {
+public interface ISequenceMapper {
 
-  List<Category> getCategoryList();
+  Sequence getSequence(Sequence sequence);
 
-  Category getCategory(String categoryId);
-
+  void updateSequence(Sequence sequence);
 }

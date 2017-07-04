@@ -24,48 +24,48 @@ import java.io.Serializable;
  */
 public class Product implements Serializable {
 
-  private static final long serialVersionUID = -7492639752670189553L;
+    private static final long serialVersionUID = -7492639752670189553L;
 
-  private String productId;
-  private String categoryId;
-  private String name;
-  private String description;
+    private String productId;
+    private String categoryId;
+    private String name;
+    private String description;
 
-  public String getProductId() {
-    return productId;
-  }
+    public String getProductId() {
+        return this.productId;
+    }
 
-  public void setProductId(String productId) {
-    this.productId = productId.trim();
-  }
+    public void setProductId(final String productId) {
+        this.productId = productId.trim();
+    }
 
-  public String getCategoryId() {
-    return categoryId;
-  }
+    public String getCategoryId() {
+        return this.categoryId;
+    }
 
-  public void setCategoryId(String categoryId) {
-    this.categoryId = categoryId;
-  }
+    public void setCategoryId(final String categoryId) {
+        this.categoryId = categoryId;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(final String name) {
+        this.name = name;
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public void setDescription(final String description) {
+        this.description = description;
+    }
 
-  @Override
-  public String toString() {
-    return getName();
-  }
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 
 }

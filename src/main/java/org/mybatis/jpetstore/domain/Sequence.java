@@ -24,33 +24,33 @@ import java.io.Serializable;
  */
 public class Sequence implements Serializable {
 
-  private static final long serialVersionUID = 8278780133180137281L;
+    private static final long serialVersionUID = 8278780133180137281L;
 
-  private String name;
-  private int nextId;
+    private String name;
+    private int nextId;
 
-  public Sequence() {
-  }
+    public Sequence() {
+    }
 
-  public Sequence(String name, int nextId) {
-    this.name = name;
-    this.nextId = nextId;
-  }
+    public Sequence(final String name, final int nextId) {
+        this.name = name;
+        this.nextId = nextId;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(final String name) {
+        this.name = name;
+    }
 
-  public int getNextId() {
-    return nextId;
-  }
+    public int getNextId() {
+        return this.nextId;
+    }
 
-  public void setNextId(int nextId) {
-    this.nextId = nextId;
-  }
+    public void setNextId(final int nextId) {
+        this.nextId = nextId;
+    }
 
 }

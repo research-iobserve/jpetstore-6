@@ -15,16 +15,19 @@
  */
 package org.mybatis.jpetstore.mapper;
 
-import org.mybatis.jpetstore.domain.Sequence;
+import java.util.List;
+
+import org.mybatis.jpetstore.domain.LineItem;
 
 /**
- * The Interface SequenceMapper.
+ * The Interface LineItemMapper.
  *
  * @author Eduardo Macarron
  */
-public interface SequenceMapper {
+public interface ILineItemMapper {
 
-  Sequence getSequence(Sequence sequence);
+  List<LineItem> getLineItemsByOrderId(int orderId);
 
-  void updateSequence(Sequence sequence);
+  void insertLineItem(LineItem lineItem);
+
 }

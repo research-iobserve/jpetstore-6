@@ -19,15 +19,15 @@ import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.SessionScope;
-import net.sourceforge.stripes.integration.spring.SpringBean;
-
 import org.mybatis.jpetstore.domain.Cart;
 import org.mybatis.jpetstore.domain.CartItem;
 import org.mybatis.jpetstore.domain.Item;
 import org.mybatis.jpetstore.service.CatalogService;
+
+import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.SessionScope;
+import net.sourceforge.stripes.integration.spring.SpringBean;
 
 /**
  * The Class CartActionBean.
@@ -37,103 +37,103 @@ import org.mybatis.jpetstore.service.CatalogService;
 @SessionScope
 public class CartActionBean extends AbstractActionBean {
 
-  private static final long serialVersionUID = -4038684592582714235L;
+    private static final long serialVersionUID = -4038684592582714235L;
 
-  private static final String VIEW_CART = "/WEB-INF/jsp/cart/Cart.jsp";
-  private static final String CHECK_OUT = "/WEB-INF/jsp/cart/Checkout.jsp";
+    private static final String VIEW_CART = "/WEB-INF/jsp/cart/Cart.jsp";
+    private static final String CHECK_OUT = "/WEB-INF/jsp/cart/Checkout.jsp";
 
-  @SpringBean
-  private transient CatalogService catalogService;
+    @SpringBean
+    private transient CatalogService catalogService;
 
-  private Cart cart = new Cart();
-  private String workingItemId;
+    private Cart cart = new Cart();
+    private String workingItemId;
 
-  public Cart getCart() {
-    return cart;
-  }
-
-  public void setCart(Cart cart) {
-    this.cart = cart;
-  }
-
-  public void setWorkingItemId(String workingItemId) {
-    this.workingItemId = workingItemId;
-  }
-
-  /**
-   * Adds the item to cart.
-   *
-   * @return the resolution
-   */
-  public Resolution addItemToCart() {
-    if (cart.containsItemId(workingItemId)) {
-      cart.incrementQuantityByItemId(workingItemId);
-    } else {
-      // isInStock is a "real-time" property that must be updated
-      // every time an item is added to the cart, even if other
-      // item details are cached.
-      boolean isInStock = catalogService.isItemInStock(workingItemId);
-      Item item = catalogService.getItem(workingItemId);
-      cart.addItem(item, isInStock);
+    public Cart getCart() {
+        return this.cart;
     }
 
-    return new ForwardResolution(VIEW_CART);
-  }
-
-  /**
-   * Removes the item from cart.
-   *
-   * @return the resolution
-   */
-  public Resolution removeItemFromCart() {
-
-    Item item = cart.removeItemById(workingItemId);
-
-    if (item == null) {
-      setMessage("Attempted to remove null CartItem from Cart.");
-      return new ForwardResolution(ERROR);
-    } else {
-      return new ForwardResolution(VIEW_CART);
+    public void setCart(final Cart cart) {
+        this.cart = cart;
     }
-  }
 
-  /**
-   * Update cart quantities.
-   *
-   * @return the resolution
-   */
-  public Resolution updateCartQuantities() {
-    HttpServletRequest request = context.getRequest();
+    public void setWorkingItemId(final String workingItemId) {
+        this.workingItemId = workingItemId;
+    }
 
-    Iterator<CartItem> cartItems = getCart().getAllCartItems();
-    while (cartItems.hasNext()) {
-      CartItem cartItem = cartItems.next();
-      String itemId = cartItem.getItem().getItemId();
-      try {
-        int quantity = Integer.parseInt(request.getParameter(itemId));
-        getCart().setQuantityByItemId(itemId, quantity);
-        if (quantity < 1) {
-          cartItems.remove();
+    /**
+     * Adds the item to cart.
+     *
+     * @return the resolution
+     */
+    public Resolution addItemToCart() {
+        if (this.cart.containsItemId(this.workingItemId)) {
+            this.cart.incrementQuantityByItemId(this.workingItemId);
+        } else {
+            // isInStock is a "real-time" property that must be updated
+            // every time an item is added to the cart, even if other
+            // item details are cached.
+            final boolean isInStock = this.catalogService.isItemInStock(this.workingItemId);
+            final Item item = this.catalogService.getItem(this.workingItemId);
+            this.cart.addItem(item, isInStock);
         }
-      } catch (Exception e) {
-        //ignore parse exceptions on purpose
-      }
+
+        return new ForwardResolution(CartActionBean.VIEW_CART);
     }
 
-    return new ForwardResolution(VIEW_CART);
-  }
+    /**
+     * Removes the item from cart.
+     *
+     * @return the resolution
+     */
+    public Resolution removeItemFromCart() {
 
-  public ForwardResolution viewCart() {
-    return new ForwardResolution(VIEW_CART);
-  }
+        final Item item = this.cart.removeItemById(this.workingItemId);
 
-  public ForwardResolution checkOut() {
-    return new ForwardResolution(CHECK_OUT);
-  }
+        if (item == null) {
+            this.setMessage("Attempted to remove null CartItem from Cart.");
+            return new ForwardResolution(AbstractActionBean.ERROR);
+        } else {
+            return new ForwardResolution(CartActionBean.VIEW_CART);
+        }
+    }
 
-  public void clear() {
-    cart = new Cart();
-    workingItemId = null;
-  }
+    /**
+     * Update cart quantities.
+     *
+     * @return the resolution
+     */
+    public Resolution updateCartQuantities() {
+        final HttpServletRequest request = this.context.getRequest();
+
+        final Iterator<CartItem> cartItems = this.getCart().getAllCartItems();
+        while (cartItems.hasNext()) {
+            final CartItem cartItem = cartItems.next();
+            final String itemId = cartItem.getItem().getItemId();
+            try {
+                final int quantity = Integer.parseInt(request.getParameter(itemId));
+                this.getCart().setQuantityByItemId(itemId, quantity);
+                if (quantity < 1) {
+                    cartItems.remove();
+                }
+            } catch (final Exception e) {
+                // ignore parse exceptions on purpose
+            }
+        }
+
+        return new ForwardResolution(CartActionBean.VIEW_CART);
+    }
+
+    public ForwardResolution viewCart() {
+        return new ForwardResolution(CartActionBean.VIEW_CART);
+    }
+
+    public ForwardResolution checkOut() {
+        return new ForwardResolution(CartActionBean.CHECK_OUT);
+    }
+
+    public void clear() {
+        this.cart = new Cart();
+        this.workingItemId = null;
+    }
 
 }

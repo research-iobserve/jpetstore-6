@@ -28,24 +28,24 @@ import net.sourceforge.stripes.action.SimpleMessage;
  */
 public abstract class AbstractActionBean implements ActionBean, Serializable {
 
-  private static final long serialVersionUID = -1767714708233127983L;
+    private static final long serialVersionUID = -1767714708233127983L;
 
-  protected static final String ERROR = "/WEB-INF/jsp/common/Error.jsp";
+    protected static final String ERROR = "/WEB-INF/jsp/common/Error.jsp";
 
-  protected transient ActionBeanContext context;
+    protected transient ActionBeanContext context;
 
-  protected void setMessage(String value) {
-    context.getMessages().add(new SimpleMessage(value));
-  }
+    protected void setMessage(final String value) {
+        this.context.getMessages().add(new SimpleMessage(value));
+    }
 
-  @Override
-  public ActionBeanContext getContext() {
-    return context;
-  }
+    @Override
+    public ActionBeanContext getContext() {
+        return this.context;
+    }
 
-  @Override
-  public void setContext(ActionBeanContext context) {
-    this.context = context;
-  }
+    @Override
+    public void setContext(final ActionBeanContext context) {
+        this.context = context;
+    }
 
 }

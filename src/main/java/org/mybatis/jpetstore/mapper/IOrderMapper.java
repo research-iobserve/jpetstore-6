@@ -24,7 +24,7 @@ import org.mybatis.jpetstore.domain.Order;
  *
  * @author Eduardo Macarron
  */
-public interface OrderMapper {
+public interface IOrderMapper {
 
   List<Order> getOrdersByUsername(String username);
 

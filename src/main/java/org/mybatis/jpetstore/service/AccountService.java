@@ -16,7 +16,7 @@
 package org.mybatis.jpetstore.service;
 
 import org.mybatis.jpetstore.domain.Account;
-import org.mybatis.jpetstore.mapper.AccountMapper;
+import org.mybatis.jpetstore.mapper.IAccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,42 +29,60 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AccountService {
 
-  @Autowired
-  private AccountMapper accountMapper;
+    @Autowired
+    private IAccountMapper accountMapper;
 
-  public Account getAccount(String username) {
-    return accountMapper.getAccountByUsername(username);
-  }
-
-  public Account getAccount(String username, String password) {
-    return accountMapper.getAccountByUsernameAndPassword(username, password);
-  }
-
-  /**
-   * Insert account.
-   *
-   * @param account the account
-   */
-  @Transactional
-  public void insertAccount(Account account) {
-    accountMapper.insertAccount(account);
-    accountMapper.insertProfile(account);
-    accountMapper.insertSignon(account);
-  }
-
-  /**
-   * Update account.
-   *
-   * @param account the account
-   */
-  @Transactional
-  public void updateAccount(Account account) {
-    accountMapper.updateAccount(account);
-    accountMapper.updateProfile(account);
-
-    if (account.getPassword() != null && account.getPassword().length() > 0) {
-      accountMapper.updateSignon(account);
+    /**
+     * Return the account for the given user name.
+     *
+     * @param username
+     *            the user name
+     * @return the matching account or null
+     */
+    public Account getAccount(final String username) {
+        return this.accountMapper.getAccountByUsername(username);
     }
-  }
+
+    /**
+     * Return the account for the given user name and password.
+     *
+     * @param username
+     *            the user name
+     * @param password
+     *            the user's password
+     * @return the matching account or null
+     */
+    public Account getAccount(final String username, final String password) {
+        return this.accountMapper.getAccountByUsernameAndPassword(username, password);
+    }
+
+    /**
+     * Insert account.
+     *
+     * @param account
+     *            the account
+     */
+    @Transactional
+    public void insertAccount(final Account account) {
+        this.accountMapper.insertAccount(account);
+        this.accountMapper.insertProfile(account);
+        this.accountMapper.insertSignon(account);
+    }
+
+    /**
+     * Update account.
+     *
+     * @param account
+     *            the account
+     */
+    @Transactional
+    public void updateAccount(final Account account) {
+        this.accountMapper.updateAccount(account);
+        this.accountMapper.updateProfile(account);
+
+        if ((account.getPassword() != null) && (account.getPassword().length() > 0)) {
+            this.accountMapper.updateSignon(account);
+        }
+    }
 
 }
