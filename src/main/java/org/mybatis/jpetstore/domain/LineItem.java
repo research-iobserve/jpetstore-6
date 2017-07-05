@@ -35,6 +35,9 @@ public class LineItem implements Serializable {
     private Item item;
     private BigDecimal total;
 
+    /**
+     * Default constructor.
+     */
     public LineItem() {
     }
 
@@ -94,6 +97,12 @@ public class LineItem implements Serializable {
         return this.item;
     }
 
+    /**
+     * Set the item for the list item and calculate the price.
+     *
+     * @param item
+     *            item to be assigned
+     */
     public void setItem(final Item item) {
         this.item = item;
         this.calculateTotal();
@@ -103,6 +112,12 @@ public class LineItem implements Serializable {
         return this.quantity;
     }
 
+    /**
+     * Set the quantity and calculate the price for this line item.
+     *
+     * @param quantity
+     *            the quantity to be set
+     */
     public void setQuantity(final int quantity) {
         this.quantity = quantity;
         this.calculateTotal();

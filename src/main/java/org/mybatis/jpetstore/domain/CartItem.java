@@ -48,20 +48,40 @@ public class CartItem implements Serializable {
         return this.item;
     }
 
+    /**
+     * Assign an item to a cart item and calculate its price.
+     *
+     * @param item
+     *            the item to be assigned
+     */
     public void setItem(final Item item) {
         this.item = item;
         this.calculateTotal();
     }
 
+    /**
+     * Get the quantity of items in the cart.
+     *
+     * @return the quantity
+     */
     public int getQuantity() {
         return this.quantity;
     }
 
+    /**
+     * Set the quantity and calculate the price for this cart item.
+     *
+     * @param quantity
+     *            the quantity to be set
+     */
     public void setQuantity(final int quantity) {
         this.quantity = quantity;
         this.calculateTotal();
     }
 
+    /**
+     * Increase quantity.
+     */
     public void incrementQuantity() {
         this.quantity++;
         this.calculateTotal();

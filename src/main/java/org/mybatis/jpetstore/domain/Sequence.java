@@ -29,9 +29,20 @@ public class Sequence implements Serializable {
     private String name;
     private int nextId;
 
+    /**
+     * Default constructor.
+     */
     public Sequence() {
     }
 
+    /**
+     * Initialize a sequence with name and nextId.
+     *
+     * @param name
+     *            sequence name
+     * @param nextId
+     *            next id in the sequence
+     */
     public Sequence(final String name, final int nextId) {
         this.name = name;
         this.nextId = nextId;

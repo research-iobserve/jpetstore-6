@@ -323,11 +323,23 @@ public class Order implements Serializable {
 
     }
 
+    /**
+     * Add a cart item to an order which converts a cart item to a line item.
+     *
+     * @param cartItem
+     *            the cart item to convert
+     */
     public void addLineItem(final CartItem cartItem) {
         final LineItem lineItem = new LineItem(this.lineItems.size() + 1, cartItem);
         this.addLineItem(lineItem);
     }
 
+    /**
+     * Add a already generated line item to the item list.
+     * 
+     * @param lineItem
+     *            the line item.
+     */
     public void addLineItem(final LineItem lineItem) {
         this.lineItems.add(lineItem);
     }

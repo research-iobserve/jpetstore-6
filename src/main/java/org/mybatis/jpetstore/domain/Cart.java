@@ -112,6 +112,14 @@ public class Cart implements Serializable {
         cartItem.incrementQuantity();
     }
 
+    /**
+     * Set the quantity of an item by the item id.
+     *
+     * @param itemId
+     *            the item id
+     * @param quantity
+     *            the quantity for that item
+     */
     public void setQuantityByItemId(final String itemId, final int quantity) {
         final CartItem cartItem = this.itemMap.get(itemId);
         cartItem.setQuantity(quantity);
