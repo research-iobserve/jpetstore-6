@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2017 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -40,59 +41,59 @@ import org.mybatis.jpetstore.mapper.IOrderMapper;
 @RunWith(MockitoJUnitRunner.class)
 public class OrderServiceTest {
 
-    @Mock
-    private IItemMapper itemMapper;
-    @Mock
-    private IOrderMapper orderMapper;
-    @Mock
-    private ILineItemMapper lineItemMapper;
+  @Mock
+  private IItemMapper itemMapper;
+  @Mock
+  private IOrderMapper orderMapper;
+  @Mock
+  private ILineItemMapper lineItemMapper;
 
-    @InjectMocks
-    private OrderService orderService;
+  @InjectMocks
+  private OrderService orderService;
 
-    @Before
-    public void setUp() throws Exception {
+  @Before
+  public void setUp() throws Exception {
 
-    }
+  }
 
-    @Test
-    public void shouldReturnOrderWhenGivenOrderIdWithOutLineItems() {
-        // given
-        final int orderId = 1;
-        final Order order = new Order();
-        final List<LineItem> lineItems = new ArrayList<LineItem>();
+  @Test
+  public void shouldReturnOrderWhenGivenOrderIdWithOutLineItems() {
+    // given
+    final int orderId = 1;
+    final Order order = new Order();
+    final List<LineItem> lineItems = new ArrayList<LineItem>();
 
-        // when
-        Mockito.when(this.orderMapper.getOrder(orderId)).thenReturn(order);
-        Mockito.when(this.lineItemMapper.getLineItemsByOrderId(orderId)).thenReturn(lineItems);
+    // when
+    Mockito.when(this.orderMapper.getOrder(orderId)).thenReturn(order);
+    Mockito.when(this.lineItemMapper.getLineItemsByOrderId(orderId)).thenReturn(lineItems);
 
-        // then
-        Assertions.assertThat(this.orderService.getOrder(orderId)).isEqualTo(order);
-        Assertions.assertThat(this.orderService.getOrder(orderId).getLineItems()).isEmpty();
-    }
+    // then
+    Assertions.assertThat(this.orderService.getOrder(orderId)).isEqualTo(order);
+    Assertions.assertThat(this.orderService.getOrder(orderId).getLineItems()).isEmpty();
+  }
 
-    @Test
-    public void shouldReturnOrderWhenGivenOrderIdExistedLineItems() {
-        // given
-        final int orderId = 1;
-        final Order order = new Order();
-        final List<LineItem> lineItems = new ArrayList<LineItem>();
-        final LineItem item = new LineItem();
-        final String itemId = "abc";
-        item.setItemId(itemId);
-        lineItems.add(item);
+  @Test
+  public void shouldReturnOrderWhenGivenOrderIdExistedLineItems() {
+    // given
+    final int orderId = 1;
+    final Order order = new Order();
+    final List<LineItem> lineItems = new ArrayList<LineItem>();
+    final LineItem item = new LineItem();
+    final String itemId = "abc";
+    item.setItemId(itemId);
+    lineItems.add(item);
 
-        // when
-        Mockito.when(this.orderMapper.getOrder(orderId)).thenReturn(order);
-        Mockito.when(this.lineItemMapper.getLineItemsByOrderId(orderId)).thenReturn(lineItems);
-        Mockito.when(this.itemMapper.getItem(itemId)).thenReturn(new Item());
-        Mockito.when(this.itemMapper.getInventoryQuantity(itemId)).thenReturn(new Integer(5));
+    // when
+    Mockito.when(this.orderMapper.getOrder(orderId)).thenReturn(order);
+    Mockito.when(this.lineItemMapper.getLineItemsByOrderId(orderId)).thenReturn(lineItems);
+    Mockito.when(this.itemMapper.getItem(itemId)).thenReturn(new Item());
+    Mockito.when(this.itemMapper.getInventoryQuantity(itemId)).thenReturn(new Integer(5));
 
-        // then
-        final Order expectedOrder = this.orderService.getOrder(orderId);
-        Assertions.assertThat(expectedOrder).isEqualTo(order);
-        Assertions.assertThat(expectedOrder.getLineItems()).hasSize(1);
-        Assertions.assertThat(expectedOrder.getLineItems().get(0).getItem().getQuantity()).isEqualTo(5);
-    }
+    // then
+    final Order expectedOrder = this.orderService.getOrder(orderId);
+    Assertions.assertThat(expectedOrder).isEqualTo(order);
+    Assertions.assertThat(expectedOrder.getLineItems()).hasSize(1);
+    Assertions.assertThat(expectedOrder.getLineItems().get(0).getItem().getQuantity()).isEqualTo(5);
+  }
 
 }

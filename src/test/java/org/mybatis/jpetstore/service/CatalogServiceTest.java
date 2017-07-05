@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2017 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -35,30 +36,30 @@ import org.mybatis.jpetstore.mapper.IProductMapper;
 @RunWith(MockitoJUnitRunner.class)
 public class CatalogServiceTest {
 
-    @Mock
-    private IProductMapper productMapper;
+  @Mock
+  private IProductMapper productMapper;
 
-    @InjectMocks
-    private CatalogService catalogService;
+  @InjectMocks
+  private CatalogService catalogService;
 
-    @Test
-    public void shouldCallTheSearchMapperTwice() {
-        // given
-        final String keywords = "a b";
-        final List<Product> l1 = new ArrayList<Product>();
-        l1.add(new Product());
-        final List<Product> l2 = new ArrayList<Product>();
-        l2.add(new Product());
+  @Test
+  public void shouldCallTheSearchMapperTwice() {
+    // given
+    final String keywords = "a b";
+    final List<Product> l1 = new ArrayList<Product>();
+    l1.add(new Product());
+    final List<Product> l2 = new ArrayList<Product>();
+    l2.add(new Product());
 
-        // when
-        Mockito.when(this.productMapper.searchProductList("%a%")).thenReturn(l1);
-        Mockito.when(this.productMapper.searchProductList("%b%")).thenReturn(l2);
-        final List<Product> r = this.catalogService.searchProductList(keywords);
+    // when
+    Mockito.when(this.productMapper.searchProductList("%a%")).thenReturn(l1);
+    Mockito.when(this.productMapper.searchProductList("%b%")).thenReturn(l2);
+    final List<Product> r = this.catalogService.searchProductList(keywords);
 
-        // then
-        Assertions.assertThat(r).hasSize(2);
-        Assertions.assertThat(r.get(0)).isSameAs(l1.get(0));
-        Assertions.assertThat(r.get(1)).isSameAs(l2.get(0));
-    }
+    // then
+    Assertions.assertThat(r).hasSize(2);
+    Assertions.assertThat(r.get(0)).isSameAs(l1.get(0));
+    Assertions.assertThat(r.get(1)).isSameAs(l2.get(0));
+  }
 
 }

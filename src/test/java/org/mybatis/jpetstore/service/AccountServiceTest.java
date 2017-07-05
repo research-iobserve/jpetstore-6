@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2017 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -32,24 +33,24 @@ import org.mybatis.jpetstore.mapper.IAccountMapper;
 @RunWith(MockitoJUnitRunner.class)
 public class AccountServiceTest {
 
-    @Mock
-    private IAccountMapper accountMapper;
+  @Mock
+  private IAccountMapper accountMapper;
 
-    @InjectMocks
-    private AccountService accountService;
+  @InjectMocks
+  private AccountService accountService;
 
-    @Test
-    public void shouldCallTheMapperToInsertAnAccount() {
-        // given
-        final Account account = new Account();
+  @Test
+  public void shouldCallTheMapperToInsertAnAccount() {
+    // given
+    final Account account = new Account();
 
-        // when
-        this.accountService.insertAccount(account);
+    // when
+    this.accountService.insertAccount(account);
 
-        // then
-        Mockito.verify(this.accountMapper).insertAccount(ArgumentMatchers.eq(account));
-        Mockito.verify(this.accountMapper).insertProfile(ArgumentMatchers.eq(account));
-        Mockito.verify(this.accountMapper).insertSignon(ArgumentMatchers.eq(account));
-    }
+    // then
+    Mockito.verify(this.accountMapper).insertAccount(ArgumentMatchers.eq(account));
+    Mockito.verify(this.accountMapper).insertProfile(ArgumentMatchers.eq(account));
+    Mockito.verify(this.accountMapper).insertSignon(ArgumentMatchers.eq(account));
+  }
 
 }

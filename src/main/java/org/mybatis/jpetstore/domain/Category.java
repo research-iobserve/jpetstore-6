@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2017 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -24,39 +25,39 @@ import java.io.Serializable;
  */
 public class Category implements Serializable {
 
-    private static final long serialVersionUID = 3992469837058393712L;
+  private static final long serialVersionUID = 3992469837058393712L;
 
-    private String categoryId;
-    private String name;
-    private String description;
+  private String categoryId;
+  private String name;
+  private String description;
 
-    public String getCategoryId() {
-        return this.categoryId;
-    }
+  public String getCategoryId() {
+    return this.categoryId;
+  }
 
-    public void setCategoryId(final String categoryId) {
-        this.categoryId = categoryId.trim();
-    }
+  public void setCategoryId(final String categoryId) {
+    this.categoryId = categoryId.trim();
+  }
 
-    public String getName() {
-        return this.name;
-    }
+  public String getName() {
+    return this.name;
+  }
 
-    public void setName(final String name) {
-        this.name = name;
-    }
+  public void setName(final String name) {
+    this.name = name;
+  }
 
-    public String getDescription() {
-        return this.description;
-    }
+  public String getDescription() {
+    return this.description;
+  }
 
-    public void setDescription(final String description) {
-        this.description = description;
-    }
+  public void setDescription(final String description) {
+    this.description = description;
+  }
 
-    @Override
-    public String toString() {
-        return this.getCategoryId();
-    }
+  @Override
+  public String toString() {
+    return this.getCategoryId();
+  }
 
 }
