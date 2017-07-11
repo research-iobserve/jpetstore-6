@@ -17,18 +17,27 @@
        limitations under the License.
 
 -->
-<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
-  <servers>
-    <server>
-      <id>ossrh</id>
-      <username>${env.CI_DEPLOY_USERNAME}</username>
-      <password>${env.CI_DEPLOY_PASSWORD}</password>
-    </server>
-    <server>
-      <id>gh-pages</id>
-      <username>git</username>
-      <password>${env.CI_SITE_PASSWORD}</password>
-    </server>
-  </servers>
-</settings>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mybatis.jpetstore.mapper.ILineItemMapper">
+
+  <cache />
+
+  <select id="getLineItemsByOrderId" resultType="LineItem">
+    SELECT
+      ORDERID,
+      LINENUM AS lineNumber,
+      ITEMID,
+      QUANTITY,
+      UNITPRICE
+    FROM LINEITEM
+    WHERE ORDERID = #{orderId}
+  </select>
+
+  <insert id="insertLineItem">
+    INSERT INTO LINEITEM (ORDERID, LINENUM, ITEMID, QUANTITY, UNITPRICE)
+    VALUES (#{orderId}, #{lineNumber}, #{itemId}, #{quantity}, #{unitPrice})
+  </insert>
+
+</mapper>
