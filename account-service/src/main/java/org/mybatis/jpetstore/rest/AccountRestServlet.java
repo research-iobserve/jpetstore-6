@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.mybatis.jpetstore.mapper.IAccountMapper;
 import org.mybatis.jpetstore.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import net.sourceforge.stripes.integration.spring.SpringBean;
 
@@ -17,13 +19,16 @@ import net.sourceforge.stripes.integration.spring.SpringBean;
  * Servlet implementation class AccountRestServlet
  */
 @WebServlet("/AccountRestServlet")
-public class AccountRestServlet extends HttpServlet {
+public class AccountRestServlet extends AbstractServlet {
     private static final long serialVersionUID = 1L;
 
     private final static Logger LOG = Logger.getLogger(AccountRestServlet.class);
 
     @SpringBean
     private transient AccountService accountService;
+    
+    @Autowired
+    private IAccountMapper accountMapper;
 
     private final AccountService ac = new AccountService();
 
