@@ -45,7 +45,7 @@ public class AccountService {
      */
     public Account getAccount(final String username) {
         AccountService.LOG.info("> user " + username);
-        AccountService.LOG.info(("> mapper " + this.accountMapper) != null ? " exists " : " missing ");
+        AccountService.LOG.info("> mapper " + (this.accountMapper != null ? " exists " : " missing "));
         return this.accountMapper.getAccountByUsername(username);
     }
 
