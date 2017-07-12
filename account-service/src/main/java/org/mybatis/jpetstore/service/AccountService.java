@@ -16,6 +16,7 @@
  */
 package org.mybatis.jpetstore.service;
 
+import org.apache.log4j.Logger;
 import org.mybatis.jpetstore.domain.Account;
 import org.mybatis.jpetstore.mapper.IAccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,60 +31,64 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AccountService {
 
-  @Autowired
-  private IAccountMapper accountMapper;
+    private final static Logger LOG = Logger.getLogger(AccountService.class);
 
-  /**
-   * Return the account for the given user name.
-   *
-   * @param username
-   *            the user name
-   * @return the matching account or null
-   */
-  public Account getAccount(final String username) {
-    return this.accountMapper.getAccountByUsername(username);
-  }
+    @Autowired
+    private IAccountMapper accountMapper;
 
-  /**
-   * Return the account for the given user name and password.
-   *
-   * @param username
-   *            the user name
-   * @param password
-   *            the user's password
-   * @return the matching account or null
-   */
-  public Account getAccount(final String username, final String password) {
-    return this.accountMapper.getAccountByUsernameAndPassword(username, password);
-  }
-
-  /**
-   * Insert account.
-   *
-   * @param account
-   *            the account
-   */
-  @Transactional
-  public void insertAccount(final Account account) {
-    this.accountMapper.insertAccount(account);
-    this.accountMapper.insertProfile(account);
-    this.accountMapper.insertSignon(account);
-  }
-
-  /**
-   * Update account.
-   *
-   * @param account
-   *            the account
-   */
-  @Transactional
-  public void updateAccount(final Account account) {
-    this.accountMapper.updateAccount(account);
-    this.accountMapper.updateProfile(account);
-
-    if ((account.getPassword() != null) && (account.getPassword().length() > 0)) {
-      this.accountMapper.updateSignon(account);
+    /**
+     * Return the account for the given user name.
+     *
+     * @param username
+     *            the user name
+     * @return the matching account or null
+     */
+    public Account getAccount(final String username) {
+        AccountService.LOG.info("> user " + username);
+        AccountService.LOG.info(("> mapper " + this.accountMapper) != null ? " exists " : " missing ");
+        return this.accountMapper.getAccountByUsername(username);
     }
-  }
+
+    /**
+     * Return the account for the given user name and password.
+     *
+     * @param username
+     *            the user name
+     * @param password
+     *            the user's password
+     * @return the matching account or null
+     */
+    public Account getAccount(final String username, final String password) {
+        return this.accountMapper.getAccountByUsernameAndPassword(username, password);
+    }
+
+    /**
+     * Insert account.
+     *
+     * @param account
+     *            the account
+     */
+    @Transactional
+    public void insertAccount(final Account account) {
+        this.accountMapper.insertAccount(account);
+        this.accountMapper.insertProfile(account);
+        this.accountMapper.insertSignon(account);
+    }
+
+    /**
+     * Update account.
+     *
+     * @param account
+     *            the account
+     */
+    @Transactional
+    public void updateAccount(final Account account) {
+        this.accountMapper.updateAccount(account);
+        this.accountMapper.updateProfile(account);
+
+        if ((account.getPassword() != null) && (account.getPassword().length() > 0)) {
+            this.accountMapper.updateSignon(account);
+        }
+    }
 
 }
