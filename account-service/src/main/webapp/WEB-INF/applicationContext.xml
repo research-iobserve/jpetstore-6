@@ -51,6 +51,9 @@
         <property name="dataSource" ref="dataSource" />
         <property name="typeAliasesPackage" value="org.mybatis.jpetstore.domain" />
     </bean>
+    
+    <bean id="AccountService" class="org.mybatis.jpetstore.service.AccountService">
+ 	</bean>
 
     <!-- scan for mappers and let them be autowired -->
     <mybatis:scan base-package="org.mybatis.jpetstore.mapper" />

@@ -16,6 +16,8 @@
  */
 package org.mybatis.jpetstore.service;
 
+import java.util.Collection;
+
 import org.apache.log4j.Logger;
 import org.mybatis.jpetstore.domain.Account;
 import org.mybatis.jpetstore.mapper.IAccountMapper;
@@ -89,6 +91,11 @@ public class AccountService {
         if ((account.getPassword() != null) && (account.getPassword().length() > 0)) {
             this.accountMapper.updateSignon(account);
         }
+    }
+
+    @Transactional
+    public Collection<Account> getAllAccounts() {
+        return this.accountMapper.getAllAccounts();
     }
 
 }

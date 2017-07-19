@@ -16,6 +16,8 @@
  */
 package org.mybatis.jpetstore.mapper;
 
+import java.util.Collection;
+
 import org.mybatis.jpetstore.domain.Account;
 
 /**
@@ -25,72 +27,74 @@ import org.mybatis.jpetstore.domain.Account;
  */
 public interface IAccountMapper {
 
-  /**
-   * Get the account by user name.
-   *
-   * @param username
-   *            the user's name
-   * @return the account or null if no account exists
-   */
-  Account getAccountByUsername(String username);
+    /**
+     * Get the account by user name.
+     *
+     * @param username
+     *            the user's name
+     * @return the account or null if no account exists
+     */
+    Account getAccountByUsername(String username);
 
-  /**
-   * Get the account for a given user name and matching password.
-   *
-   * @param username
-   *            user's name
-   * @param password
-   *            user's password
-   * @return the user's account or null if user does not exist or the password does not match
-   */
-  Account getAccountByUsernameAndPassword(String username, String password);
+    Collection<Account> getAllAccounts();
 
-  /**
-   * Add an account to the database.
-   *
-   * @param account
-   *            the accont to be added
-   */
-  void insertAccount(Account account);
+    /**
+     * Get the account for a given user name and matching password.
+     *
+     * @param username
+     *            user's name
+     * @param password
+     *            user's password
+     * @return the user's account or null if user does not exist or the password does not match
+     */
+    Account getAccountByUsernameAndPassword(String username, String password);
 
-  /**
-   * Insert new preferences for an account.
-   *
-   * @param account
-   *            the account
-   */
-  void insertProfile(Account account);
+    /**
+     * Add an account to the database.
+     *
+     * @param account
+     *            the accont to be added
+     */
+    void insertAccount(Account account);
 
-  /**
-   * Insert sign on/authentication values for an account.
-   *
-   * @param account
-   *            the account
-   */
-  void insertSignon(Account account);
+    /**
+     * Insert new preferences for an account.
+     *
+     * @param account
+     *            the account
+     */
+    void insertProfile(Account account);
 
-  /**
-   * Update an existing account.
-   *
-   * @param account
-   *            the account to be updated
-   */
-  void updateAccount(Account account);
+    /**
+     * Insert sign on/authentication values for an account.
+     *
+     * @param account
+     *            the account
+     */
+    void insertSignon(Account account);
 
-  /**
-   * Update preferences for an account.
-   *
-   * @param account
-   *            the account
-   */
-  void updateProfile(Account account);
+    /**
+     * Update an existing account.
+     *
+     * @param account
+     *            the account to be updated
+     */
+    void updateAccount(Account account);
 
-  /**
-   * Update sign on/authentication values for an existing account.
-   *
-   * @param account
-   *            the account
-   */
-  void updateSignon(Account account);
+    /**
+     * Update preferences for an account.
+     *
+     * @param account
+     *            the account
+     */
+    void updateProfile(Account account);
+
+    /**
+     * Update sign on/authentication values for an existing account.
+     *
+     * @param account
+     *            the account
+     */
+    void updateSignon(Account account);
 
 }

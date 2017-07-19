@@ -27,13 +27,10 @@
 		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
 		<param-value>StripesResources</param-value>
 	</context-param>
-<<<<<<< HEAD
 	<context-param>
     	<param-name>contextConfigLocation</param-name>
     	<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
-=======
->>>>>>> minor changes to debug instantiation problems
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -63,9 +60,5 @@
 	<servlet-mapping>
 		<servlet-name>StripesDispatcher</servlet-name>
 		<url-pattern>*.action</url-pattern>
-<<<<<<< HEAD
-	</servlet-mapping>	
-=======
 	</servlet-mapping>
->>>>>>> minor changes to debug instantiation problems
 </web-app>

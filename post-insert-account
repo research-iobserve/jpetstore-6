@@ -1,0 +1,20 @@
+{
+"username":"d",
+"password":"d",
+"email":"d",
+"firstName":"d",
+"lastName":"d",
+"status":null,
+"address1":"d",
+"address2":"d",
+"city":"d",
+"state":"d",
+"zip":"d",
+"country":"d",
+"phone":"d" ,
+"favouriteCategoryId":"FISH",
+"languagePreference":"english",
+"listOption":false,
+"bannerOption":false,
+"bannerName":null
+}
