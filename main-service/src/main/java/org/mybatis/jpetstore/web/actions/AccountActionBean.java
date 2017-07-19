@@ -58,6 +58,7 @@ public class AccountActionBean extends AbstractActionBean {
 
     @SpringBean
     private transient AccountService accountService;
+
     @SpringBean
     private transient CatalogService catalogService;
 

@@ -14,7 +14,9 @@ import org.mybatis.jpetstore.domain.Account;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Servlet implementation class AccountRestServlet
+ * Provides the account update functionality. Input is a JSON serialization of a Account object.
+ *
+ * @author Reiner Jung
  */
 @WebServlet("/update-account")
 public class UpdateAccountServlet extends AbstractServlet {
@@ -35,10 +37,7 @@ public class UpdateAccountServlet extends AbstractServlet {
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
-
-        final ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(response.getWriter(), null);
-
+        UpdateAccountServlet.LOG.error("update-account: GET not supported, requires POST");
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
     }
 
@@ -55,6 +54,7 @@ public class UpdateAccountServlet extends AbstractServlet {
         if (account != null) {
             this.accountService.updateAccount(account);
         } else {
+            UpdateAccountServlet.LOG.error("update-account: NO ACCOUNT to update");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
     }

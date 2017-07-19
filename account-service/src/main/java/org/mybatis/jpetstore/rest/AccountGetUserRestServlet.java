@@ -80,7 +80,6 @@ public class AccountGetUserRestServlet extends AbstractServlet {
     @Override
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
-        // TODO Auto-generated method stub
         this.doGet(request, response);
     }
 

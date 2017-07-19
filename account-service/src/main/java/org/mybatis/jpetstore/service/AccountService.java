@@ -18,7 +18,6 @@ package org.mybatis.jpetstore.service;
 
 import java.util.Collection;
 
-import org.apache.log4j.Logger;
 import org.mybatis.jpetstore.domain.Account;
 import org.mybatis.jpetstore.mapper.IAccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +25,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * The Class AccountService.
+ * The Class AccountService maps local account service functionality to database operations.
  *
- * @author Eduardo Macarron
+ * @author Eduardo Macarron -- initial contribution
+ * @author Reiner Jung
  */
 @Service
 public class AccountService {
-
-    private final static Logger LOG = Logger.getLogger(AccountService.class);
 
     @Autowired
     private IAccountMapper accountMapper;
@@ -46,8 +44,6 @@ public class AccountService {
      * @return the matching account or null
      */
     public Account getAccount(final String username) {
-        AccountService.LOG.info("> user " + username);
-        AccountService.LOG.info("> mapper " + (this.accountMapper != null ? " exists " : " missing "));
         return this.accountMapper.getAccountByUsername(username);
     }
 

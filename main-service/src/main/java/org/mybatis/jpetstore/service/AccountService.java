@@ -42,11 +42,7 @@ public class AccountService {
     private static final String ACCOUNT_SERVICE = "http://172.17.0.2:8080/jpetstore-account/";
     private static final String REQUEST_USER = AccountService.ACCOUNT_SERVICE + "request-user";
     private static final String INSERT_ACCOUNT_REQUEST = AccountService.ACCOUNT_SERVICE + "insert-account";
-    private static final String INSERT_PROFILE_REQUEST = AccountService.ACCOUNT_SERVICE + "insert-profile";
-    private static final String INSERT_SIGNON_REQUEST = AccountService.ACCOUNT_SERVICE + "insert-signon";
     private static final String UPDATE_ACCOUNT_REQUEST = AccountService.ACCOUNT_SERVICE + "update-account";
-    private static final String UPDATE_PROFILE_REQUEST = AccountService.ACCOUNT_SERVICE + "update-profile";
-    private static final String UPDATE_SIGNON_REQUEST = AccountService.ACCOUNT_SERVICE + "update-signon";
 
     private final static Logger LOG = Logger.getLogger(AccountService.class);
 

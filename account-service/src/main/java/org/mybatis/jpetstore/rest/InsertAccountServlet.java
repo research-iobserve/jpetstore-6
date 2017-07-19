@@ -35,10 +35,7 @@ public class InsertAccountServlet extends AbstractServlet {
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
-
-        final ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(response.getWriter(), null);
-
+        InsertAccountServlet.LOG.error("insert-account: GET not supported, requires POST");
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
     }
 
@@ -49,20 +46,13 @@ public class InsertAccountServlet extends AbstractServlet {
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
 
-        InsertAccountServlet.LOG.info("insert-account");
-
         final ObjectMapper mapper = new ObjectMapper();
-
-        InsertAccountServlet.LOG.info("insert-account " + mapper);
-
         final Account account = mapper.readValue(request.getReader(), Account.class);
 
         if (account != null) {
-            InsertAccountServlet.LOG.info("insert-account " + account.toString());
-
             this.accountService.insertAccount(account);
         } else {
-            InsertAccountServlet.LOG.info("insert-account NO ACCOUNT");
+            InsertAccountServlet.LOG.error("insert-account NO ACCOUNT to insert");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
     }
