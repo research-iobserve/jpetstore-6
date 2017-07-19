@@ -1,0 +1,13 @@
+jpetstore-frontend;size of observed system;14
+jpetstore-frontend;lines of code (LOC);1030
+jpetstore-frontend;cyclomatic complexity bucket 1;73
+jpetstore-frontend;cyclomatic complexity bucket 2;10
+jpetstore-frontend;cyclomatic complexity bucket 3;3
+jpetstore-frontend;cyclomatic complexity bucket 4;3
+jpetstore-frontend;number of modules;41
+jpetstore-frontend;number of nodes;154
+jpetstore-frontend;number of edges;149
+jpetstore-frontend;hypergraph size;931.1200438717251
+jpetstore-frontend;hypergraph complexity;630.2085155434784
+jpetstore-frontend;inter module coupling;408.82248021237535
+jpetstore-frontend;graph cohesion;0.002340395280384895

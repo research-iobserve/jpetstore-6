@@ -9,10 +9,10 @@
 		<version>6.0.3-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>jpetstore-frontend</artifactId>
+	<artifactId>frontend-service</artifactId>
 	<packaging>war</packaging>
 
-	<name>JPetStore Demo 6 - Frontend</name>
+	<name>JPetStore Demo 6 - Frontend Service</name>
 
 	<build>
 		<finalName>jpetstore-frontend</finalName>		

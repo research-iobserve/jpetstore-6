@@ -134,8 +134,10 @@
 		</dependencies>
 	
 	<modules>
-		<module>main-service</module>
+		<module>frontend-service</module>
 		<module>account-service</module>
+		<module>catalog-service</module>
+		<module>order-service</module>
 	</modules>
 	
 

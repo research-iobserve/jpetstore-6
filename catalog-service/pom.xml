@@ -9,13 +9,13 @@
 		<version>6.0.3-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>account-service</artifactId>
+	<artifactId>catalog-service</artifactId>
 	<packaging>war</packaging>
 
-	<name>JPetStore Demo 6 - Account Service</name>
+	<name>JPetStore Demo 6 - Catalog Service</name>
 
 	<build>
-		<finalName>jpetstore-account</finalName>		
+		<finalName>jpetstore-catalog</finalName>		
 	</build>
 
 </project>

@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hypergraph:ModularHypergraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hypergraph="http://evaluation.se.cs.cau.de/hypergraph">
+  <nodes name="org.mybatis.jpetstore.mapper.ICategoryMapper.getCategoryList " edges="//@edges.57">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.ICategoryMapper.getCategory java.lang.String" edges="//@edges.58">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IItemMapper.updateInventoryQuantity java.util.Map&lt;String,Object>" edges="//@edges.19">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IItemMapper.getInventoryQuantity java.lang.String" edges="//@edges.68">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IItemMapper.getItemListByProduct java.lang.String" edges="//@edges.66">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IItemMapper.getItem java.lang.String" edges="//@edges.26 //@edges.67">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IOrderMapper.getOrdersByUsername java.lang.String" edges="//@edges.27">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IOrderMapper.getOrder I" edges="//@edges.23">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IOrderMapper.insertOrder org.mybatis.jpetstore.domain.Order" edges="//@edges.20">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IOrderMapper.insertOrderStatus org.mybatis.jpetstore.domain.Order" edges="//@edges.21">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IProductMapper.getProductListByCategory java.lang.String" edges="//@edges.60">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IProductMapper.getProduct java.lang.String" edges="//@edges.59">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.IProductMapper.searchProductList java.lang.String" edges="//@edges.64">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.ISequenceMapper.getSequence org.mybatis.jpetstore.domain.Sequence" edges="//@edges.28">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.ISequenceMapper.updateSequence org.mybatis.jpetstore.domain.Sequence" edges="//@edges.30">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.ILineItemMapper.getLineItemsByOrderId I">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.mapper.ILineItemMapper.insertLineItem org.mybatis.jpetstore.domain.LineItem" edges="//@edges.22">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order" edges="//@edges.14 //@edges.15 //@edges.16 //@edges.17 //@edges.18 //@edges.19 //@edges.20 //@edges.21 //@edges.22 //@edges.112">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.OrderService.getOrder I" edges="//@edges.23 //@edges.24 //@edges.25 //@edges.26 //@edges.118">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.OrderService.getOrdersByUsername java.lang.String" edges="//@edges.27 //@edges.99">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.OrderService.getNextId java.lang.String" edges="//@edges.28 //@edges.29 //@edges.30">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String" edges="//@edges.31 //@edges.124 //@edges.130">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String,java.lang.String" edges="//@edges.32 //@edges.134">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String" edges="//@edges.31 //@edges.32 //@edges.33 //@edges.34 //@edges.35 //@edges.36 //@edges.37 //@edges.38 //@edges.39 //@edges.40 //@edges.41 //@edges.42">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.insertAccount org.mybatis.jpetstore.domain.Account" edges="//@edges.43 //@edges.44 //@edges.123">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.updateAccount org.mybatis.jpetstore.domain.Account" edges="//@edges.45 //@edges.46 //@edges.129">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object" edges="//@edges.44 //@edges.46 //@edges.47 //@edges.48 //@edges.49 //@edges.50 //@edges.51 //@edges.52 //@edges.53 //@edges.54 //@edges.55 //@edges.56">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.getCategoryList " edges="//@edges.57">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.getCategory java.lang.String" edges="//@edges.58 //@edges.85">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.getProduct java.lang.String" edges="//@edges.59 //@edges.88">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.getProductListByCategory java.lang.String" edges="//@edges.60 //@edges.84 //@edges.126 //@edges.131 //@edges.140">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String" edges="//@edges.61 //@edges.62 //@edges.63 //@edges.64 //@edges.65 //@edges.95">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.getItemListByProduct java.lang.String" edges="//@edges.66 //@edges.87">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.getItem java.lang.String" edges="//@edges.67 //@edges.70 //@edges.90">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.isItemInStock java.lang.String" edges="//@edges.68 //@edges.69">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.getCart " edges="//@edges.1">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.setCart org.mybatis.jpetstore.domain.Cart" edges="//@edges.1">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.setWorkingItemId java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.addItemToCart " edges="//@edges.69 //@edges.70 //@edges.71">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.removeItemFromCart " edges="//@edges.72 //@edges.73">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities " edges="//@edges.74 //@edges.75 //@edges.76 //@edges.77 //@edges.78 //@edges.79 //@edges.80">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.viewCart " edges="//@edges.81">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.checkOut " edges="//@edges.82">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.clear " edges="//@edges.1 //@edges.114">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getKeyword ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setKeyword java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getCategoryId ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setCategoryId java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getProductId ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setProductId java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getItemId ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setItemId java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getCategory " edges="//@edges.3">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setCategory org.mybatis.jpetstore.domain.Category" edges="//@edges.3">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getProduct " edges="//@edges.4">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setProduct org.mybatis.jpetstore.domain.Product" edges="//@edges.4">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getItem " edges="//@edges.5">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setItem org.mybatis.jpetstore.domain.Item" edges="//@edges.5">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getCategoryList ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setCategoryList java.util.List&lt;Category>">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getProductList ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setProductList java.util.List&lt;Product>">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.getItemList ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.setItemList java.util.List&lt;Item>">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewMain " edges="//@edges.83">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewCategory " edges="//@edges.84 //@edges.3 //@edges.85 //@edges.86">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewProduct " edges="//@edges.87 //@edges.4 //@edges.88 //@edges.89">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewItem " edges="//@edges.5 //@edges.90 //@edges.4 //@edges.91">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.searchProducts " edges="//@edges.92 //@edges.93 //@edges.94 //@edges.95 //@edges.96">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.clear " edges="//@edges.3 //@edges.4 //@edges.5">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.getOrderId ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.setOrderId I">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.getOrder " edges="//@edges.7 //@edges.111">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.setOrder org.mybatis.jpetstore.domain.Order" edges="//@edges.7">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.isShippingAddressRequired " edges="//@edges.8">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.setShippingAddressRequired Z" edges="//@edges.8">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.isConfirmed " edges="//@edges.9 //@edges.110">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.setConfirmed Z" edges="//@edges.9">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.getCreditCardTypes ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.getOrderList ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.listOrders " edges="//@edges.97 //@edges.98 //@edges.99 //@edges.100">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm " edges="//@edges.101 //@edges.102 //@edges.103 //@edges.104 //@edges.105 //@edges.106 //@edges.107">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder " edges="//@edges.108 //@edges.8 //@edges.109 //@edges.110 //@edges.111 //@edges.112 //@edges.7 //@edges.113 //@edges.114 //@edges.115">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder " edges="//@edges.116 //@edges.117 //@edges.7 //@edges.118 //@edges.119 //@edges.120 //@edges.121">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.clear " edges="//@edges.103 //@edges.7 //@edges.8 //@edges.9">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.getAccount " edges="//@edges.11">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.getUsername " edges="//@edges.135">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.setUsername java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.getPassword " edges="//@edges.136">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.setPassword java.lang.String">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.getMyList ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.setMyList java.util.List&lt;Product>">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.getLanguages ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.getCategories ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccountForm " edges="//@edges.122">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccount " edges="//@edges.123 //@edges.11 //@edges.124 //@edges.125 //@edges.126 //@edges.12 //@edges.127">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccountForm " edges="//@edges.128">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccount " edges="//@edges.129 //@edges.11 //@edges.130 //@edges.131 //@edges.132">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.signonForm " edges="//@edges.133">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon " edges="//@edges.11 //@edges.134 //@edges.135 //@edges.136 //@edges.137 //@edges.138 //@edges.139 //@edges.140 //@edges.12 //@edges.141 //@edges.142 //@edges.143">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.signoff " edges="//@edges.144 //@edges.145 //@edges.146">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.isAuthenticated " edges="//@edges.104 //@edges.12 //@edges.11">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.clear " edges="//@edges.138 //@edges.145 //@edges.11 //@edges.12">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String" edges="//@edges.72 //@edges.93 //@edges.105 //@edges.115 //@edges.121 //@edges.137 //@edges.147 //@edges.148">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AbstractActionBean.getContext ">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AbstractActionBean.setContext net.sourceforge.stripes.action.ActionBeanContext">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.OrderService.OrderService">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.AccountService.AccountService">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.service.CatalogService.CatalogService">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CartActionBean.CartActionBean">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.CatalogActionBean.CatalogActionBean">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.OrderActionBean.OrderActionBean">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="org.mybatis.jpetstore.web.actions.AccountActionBean.AccountActionBean">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </nodes>
+  <nodes name="java.util.List&lt;LineItem>.size " edges="//@edges.14 //@edges.24">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.List&lt;LineItem>.get I" edges="//@edges.15 //@edges.25">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.Integer.Integer I" edges="//@edges.16">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.HashMap&lt;String,Object>.HashMap&lt;String,Object> I" edges="//@edges.17">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.Map&lt;String,Object>.put java.lang.String,java.lang.Object" edges="//@edges.18">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.RuntimeException.RuntimeException java.lang.String" edges="//@edges.29">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="org.apache.log4j.Category.info java.lang.Object" edges="//@edges.33 //@edges.43 //@edges.45 //@edges.49 //@edges.125">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.javanet.NetHttpTransport.NetHttpTransport " edges="//@edges.34 //@edges.47">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.HttpRequestFactory.buildGetRequest com.google.api.client.http.GenericUrl" edges="//@edges.35">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.GenericUrl.GenericUrl java.lang.String" edges="//@edges.36 //@edges.53">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.HttpRequest.execute " edges="//@edges.37 //@edges.54">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.HttpResponse.getStatusCode " edges="//@edges.38 //@edges.55">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.fasterxml.jackson.databind.ObjectMapper.ObjectMapper " edges="//@edges.39">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.fasterxml.jackson.databind.ObjectMapper.readValue java.io.InputStream,java.lang.Class&lt;Account>" edges="//@edges.40">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.HttpResponse.getContent " edges="//@edges.41">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.Throwable.printStackTrace " edges="//@edges.42 //@edges.56">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.json.jackson2.JacksonFactory.getDefaultInstance " edges="//@edges.48">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.Object.toString " edges="//@edges.50">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.json.JsonHttpContent.JsonHttpContent com.google.api.client.json.JsonFactory,java.lang.Object" edges="//@edges.51">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="com.google.api.client.http.HttpRequestFactory.buildPostRequest com.google.api.client.http.GenericUrl,com.google.api.client.http.HttpContent" edges="//@edges.52">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.ArrayList&lt;Product>.ArrayList&lt;Product> " edges="//@edges.61">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.String.split java.lang.String" edges="//@edges.62">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.List&lt;Product>.addAll java.util.Collection&lt;? extends Product>" edges="//@edges.63">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.String.toLowerCase " edges="//@edges.65 //@edges.96">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String" edges="//@edges.71 //@edges.73 //@edges.80 //@edges.81 //@edges.82 //@edges.83 //@edges.86 //@edges.89 //@edges.91 //@edges.94 //@edges.100 //@edges.107 //@edges.109 //@edges.120 //@edges.122 //@edges.128 //@edges.133 //@edges.139">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="net.sourceforge.stripes.action.ActionBeanContext.getRequest " edges="//@edges.74">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.Iterator&lt;CartItem>.hasNext " edges="//@edges.75">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.Iterator&lt;CartItem>.next " edges="//@edges.76">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.Integer.parseInt java.lang.String" edges="//@edges.77">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="javax.servlet.ServletRequest.getParameter java.lang.String" edges="//@edges.78">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.Iterator&lt;CartItem>.remove " edges="//@edges.79">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.String.length " edges="//@edges.92">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="javax.servlet.http.HttpServletRequest.getSession " edges="//@edges.97 //@edges.101 //@edges.108 //@edges.116 //@edges.141">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="javax.servlet.http.HttpSession.getAttribute java.lang.String" edges="//@edges.98 //@edges.102 //@edges.113 //@edges.117">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.Class&lt;? extends ActionBean>" edges="//@edges.106">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.lang.String.equals java.lang.Object" edges="//@edges.119">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="net.sourceforge.stripes.action.RedirectResolution.RedirectResolution java.lang.Class&lt;? extends ActionBean>" edges="//@edges.127 //@edges.132 //@edges.143 //@edges.146">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="javax.servlet.http.HttpSession.setAttribute java.lang.String,java.lang.Object" edges="//@edges.142">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="javax.servlet.http.HttpSession.invalidate " edges="//@edges.144">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="java.util.List&lt;Message>.add net.sourceforge.stripes.action.Message" edges="//@edges.147">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <nodes name="net.sourceforge.stripes.action.SimpleMessage.SimpleMessage java.lang.String,java.lang.Object[]" edges="//@edges.148">
+    <derivedFrom xsi:type="hypergraph:MethodTrace"/>
+  </nodes>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.serialVersionUID">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.cart">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.serialVersionUID">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.category">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.product">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.item">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.serialVersionUID">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.order">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.shippingAddressRequired">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.confirmed">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.serialVersionUID">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.account">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.authenticated">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AbstractActionBean.serialVersionUID">
+    <derivedFrom xsi:type="hypergraph:FieldTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::java.util.List&lt;LineItem>.size ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::java.util.List&lt;LineItem>.get I">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::java.lang.Integer.Integer I">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::java.util.HashMap&lt;String,Object>.HashMap&lt;String,Object> I">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::java.util.Map&lt;String,Object>.put java.lang.String,java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::org.mybatis.jpetstore.mapper.IItemMapper.updateInventoryQuantity java.util.Map&lt;String,Object>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::org.mybatis.jpetstore.mapper.IOrderMapper.insertOrder org.mybatis.jpetstore.domain.Order">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::org.mybatis.jpetstore.mapper.IOrderMapper.insertOrderStatus org.mybatis.jpetstore.domain.Order">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order::org.mybatis.jpetstore.mapper.ILineItemMapper.insertLineItem org.mybatis.jpetstore.domain.LineItem">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getOrder I::org.mybatis.jpetstore.mapper.IOrderMapper.getOrder I">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getOrder I::java.util.List&lt;LineItem>.size ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getOrder I::java.util.List&lt;LineItem>.get I">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getOrder I::org.mybatis.jpetstore.mapper.IItemMapper.getItem java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getOrdersByUsername java.lang.String::org.mybatis.jpetstore.mapper.IOrderMapper.getOrdersByUsername java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getNextId java.lang.String::org.mybatis.jpetstore.mapper.ISequenceMapper.getSequence org.mybatis.jpetstore.domain.Sequence">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getNextId java.lang.String::java.lang.RuntimeException.RuntimeException java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.OrderService.getNextId java.lang.String::org.mybatis.jpetstore.mapper.ISequenceMapper.updateSequence org.mybatis.jpetstore.domain.Sequence">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String::org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String,java.lang.String::org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::org.apache.log4j.Category.info java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.google.api.client.http.javanet.NetHttpTransport.NetHttpTransport ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.google.api.client.http.HttpRequestFactory.buildGetRequest com.google.api.client.http.GenericUrl">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.google.api.client.http.GenericUrl.GenericUrl java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.google.api.client.http.HttpRequest.execute ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.google.api.client.http.HttpResponse.getStatusCode ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.fasterxml.jackson.databind.ObjectMapper.ObjectMapper ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.fasterxml.jackson.databind.ObjectMapper.readValue java.io.InputStream,java.lang.Class&lt;Account>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::com.google.api.client.http.HttpResponse.getContent ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.getAccountFromRemote java.lang.String::java.lang.Throwable.printStackTrace ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.insertAccount org.mybatis.jpetstore.domain.Account::org.apache.log4j.Category.info java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.insertAccount org.mybatis.jpetstore.domain.Account::org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.updateAccount org.mybatis.jpetstore.domain.Account::org.apache.log4j.Category.info java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.updateAccount org.mybatis.jpetstore.domain.Account::org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.http.javanet.NetHttpTransport.NetHttpTransport ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.json.jackson2.JacksonFactory.getDefaultInstance ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::org.apache.log4j.Category.info java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::java.lang.Object.toString ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.http.json.JsonHttpContent.JsonHttpContent com.google.api.client.json.JsonFactory,java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.http.HttpRequestFactory.buildPostRequest com.google.api.client.http.GenericUrl,com.google.api.client.http.HttpContent">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.http.GenericUrl.GenericUrl java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.http.HttpRequest.execute ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::com.google.api.client.http.HttpResponse.getStatusCode ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.AccountService.postOperation java.lang.String,java.lang.Object::java.lang.Throwable.printStackTrace ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.getCategoryList ::org.mybatis.jpetstore.mapper.ICategoryMapper.getCategoryList ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.getCategory java.lang.String::org.mybatis.jpetstore.mapper.ICategoryMapper.getCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.getProduct java.lang.String::org.mybatis.jpetstore.mapper.IProductMapper.getProduct java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.getProductListByCategory java.lang.String::org.mybatis.jpetstore.mapper.IProductMapper.getProductListByCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String::java.util.ArrayList&lt;Product>.ArrayList&lt;Product> ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String::java.lang.String.split java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String::java.util.List&lt;Product>.addAll java.util.Collection&lt;? extends Product>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String::org.mybatis.jpetstore.mapper.IProductMapper.searchProductList java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String::java.lang.String.toLowerCase ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.getItemListByProduct java.lang.String::org.mybatis.jpetstore.mapper.IItemMapper.getItemListByProduct java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.getItem java.lang.String::org.mybatis.jpetstore.mapper.IItemMapper.getItem java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.service.CatalogService.isItemInStock java.lang.String::org.mybatis.jpetstore.mapper.IItemMapper.getInventoryQuantity java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.addItemToCart ::org.mybatis.jpetstore.service.CatalogService.isItemInStock java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.addItemToCart ::org.mybatis.jpetstore.service.CatalogService.getItem java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.addItemToCart ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.removeItemFromCart ::org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.removeItemFromCart ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::net.sourceforge.stripes.action.ActionBeanContext.getRequest ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::java.util.Iterator&lt;CartItem>.hasNext ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::java.util.Iterator&lt;CartItem>.next ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::java.lang.Integer.parseInt java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::javax.servlet.ServletRequest.getParameter java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::java.util.Iterator&lt;CartItem>.remove ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.updateCartQuantities ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.viewCart ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CartActionBean.checkOut ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewMain ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewCategory ::org.mybatis.jpetstore.service.CatalogService.getProductListByCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewCategory ::org.mybatis.jpetstore.service.CatalogService.getCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewCategory ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewProduct ::org.mybatis.jpetstore.service.CatalogService.getItemListByProduct java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewProduct ::org.mybatis.jpetstore.service.CatalogService.getProduct java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewProduct ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewItem ::org.mybatis.jpetstore.service.CatalogService.getItem java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.viewItem ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.searchProducts ::java.lang.String.length ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.searchProducts ::org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.searchProducts ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.searchProducts ::org.mybatis.jpetstore.service.CatalogService.searchProductList java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.CatalogActionBean.searchProducts ::java.lang.String.toLowerCase ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.listOrders ::javax.servlet.http.HttpServletRequest.getSession ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.listOrders ::javax.servlet.http.HttpSession.getAttribute java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.listOrders ::org.mybatis.jpetstore.service.OrderService.getOrdersByUsername java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.listOrders ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::javax.servlet.http.HttpServletRequest.getSession ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::javax.servlet.http.HttpSession.getAttribute java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::org.mybatis.jpetstore.web.actions.OrderActionBean.clear ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::org.mybatis.jpetstore.web.actions.AccountActionBean.isAuthenticated ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.Class&lt;? extends ActionBean>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrderForm ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::javax.servlet.http.HttpServletRequest.getSession ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::org.mybatis.jpetstore.web.actions.OrderActionBean.isConfirmed ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::org.mybatis.jpetstore.web.actions.OrderActionBean.getOrder ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::org.mybatis.jpetstore.service.OrderService.insertOrder org.mybatis.jpetstore.domain.Order">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::javax.servlet.http.HttpSession.getAttribute java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::org.mybatis.jpetstore.web.actions.CartActionBean.clear ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.newOrder ::org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder ::javax.servlet.http.HttpServletRequest.getSession ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder ::javax.servlet.http.HttpSession.getAttribute java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder ::org.mybatis.jpetstore.service.OrderService.getOrder I">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder ::java.lang.String.equals java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.OrderActionBean.viewOrder ::org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccountForm ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccount ::org.mybatis.jpetstore.service.AccountService.insertAccount org.mybatis.jpetstore.domain.Account">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccount ::org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccount ::org.apache.log4j.Category.info java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccount ::org.mybatis.jpetstore.service.CatalogService.getProductListByCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.newAccount ::net.sourceforge.stripes.action.RedirectResolution.RedirectResolution java.lang.Class&lt;? extends ActionBean>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccountForm ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccount ::org.mybatis.jpetstore.service.AccountService.updateAccount org.mybatis.jpetstore.domain.Account">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccount ::org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccount ::org.mybatis.jpetstore.service.CatalogService.getProductListByCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.editAccount ::net.sourceforge.stripes.action.RedirectResolution.RedirectResolution java.lang.Class&lt;? extends ActionBean>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signonForm ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::org.mybatis.jpetstore.service.AccountService.getAccount java.lang.String,java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::org.mybatis.jpetstore.web.actions.AccountActionBean.getUsername ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::org.mybatis.jpetstore.web.actions.AccountActionBean.getPassword ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::org.mybatis.jpetstore.web.actions.AccountActionBean.clear ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::net.sourceforge.stripes.action.ForwardResolution.ForwardResolution java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::org.mybatis.jpetstore.service.CatalogService.getProductListByCategory java.lang.String">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::javax.servlet.http.HttpServletRequest.getSession ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::javax.servlet.http.HttpSession.setAttribute java.lang.String,java.lang.Object">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signon ::net.sourceforge.stripes.action.RedirectResolution.RedirectResolution java.lang.Class&lt;? extends ActionBean>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signoff ::javax.servlet.http.HttpSession.invalidate ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signoff ::org.mybatis.jpetstore.web.actions.AccountActionBean.clear ">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AccountActionBean.signoff ::net.sourceforge.stripes.action.RedirectResolution.RedirectResolution java.lang.Class&lt;? extends ActionBean>">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String::java.util.List&lt;Message>.add net.sourceforge.stripes.action.Message">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <edges name="org.mybatis.jpetstore.web.actions.AbstractActionBean.setMessage java.lang.String::net.sourceforge.stripes.action.SimpleMessage.SimpleMessage java.lang.String,java.lang.Object[]">
+    <derivedFrom xsi:type="hypergraph:CallerCalleeTrace"/>
+  </edges>
+  <modules name="org.mybatis.jpetstore.mapper.ICategoryMapper" nodes="//@nodes.0 //@nodes.1">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.mapper.IItemMapper" nodes="//@nodes.2 //@nodes.3 //@nodes.4 //@nodes.5">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.mapper.IOrderMapper" nodes="//@nodes.6 //@nodes.7 //@nodes.8 //@nodes.9">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.mapper.IProductMapper" nodes="//@nodes.10 //@nodes.11 //@nodes.12">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.mapper.ISequenceMapper" nodes="//@nodes.13 //@nodes.14">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.mapper.ILineItemMapper" nodes="//@nodes.15 //@nodes.16">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.service.OrderService" nodes="//@nodes.17 //@nodes.18 //@nodes.19 //@nodes.20 //@nodes.106">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.service.AccountService" nodes="//@nodes.21 //@nodes.22 //@nodes.23 //@nodes.24 //@nodes.25 //@nodes.26 //@nodes.107 //@nodes.117">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.service.CatalogService" nodes="//@nodes.27 //@nodes.28 //@nodes.29 //@nodes.30 //@nodes.31 //@nodes.32 //@nodes.33 //@nodes.34 //@nodes.108">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.web.actions.CartActionBean" nodes="//@nodes.35 //@nodes.36 //@nodes.37 //@nodes.38 //@nodes.39 //@nodes.40 //@nodes.41 //@nodes.42 //@nodes.43 //@nodes.109">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.web.actions.CatalogActionBean" nodes="//@nodes.44 //@nodes.45 //@nodes.46 //@nodes.47 //@nodes.48 //@nodes.49 //@nodes.50 //@nodes.51 //@nodes.52 //@nodes.53 //@nodes.54 //@nodes.55 //@nodes.56 //@nodes.57 //@nodes.58 //@nodes.59 //@nodes.60 //@nodes.61 //@nodes.62 //@nodes.63 //@nodes.64 //@nodes.65 //@nodes.66 //@nodes.67 //@nodes.68 //@nodes.69 //@nodes.110">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.web.actions.OrderActionBean" nodes="//@nodes.70 //@nodes.71 //@nodes.72 //@nodes.73 //@nodes.74 //@nodes.75 //@nodes.76 //@nodes.77 //@nodes.78 //@nodes.79 //@nodes.80 //@nodes.81 //@nodes.82 //@nodes.83 //@nodes.84 //@nodes.111">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.web.actions.AccountActionBean" nodes="//@nodes.85 //@nodes.86 //@nodes.87 //@nodes.88 //@nodes.89 //@nodes.90 //@nodes.91 //@nodes.92 //@nodes.93 //@nodes.94 //@nodes.95 //@nodes.96 //@nodes.97 //@nodes.98 //@nodes.99 //@nodes.100 //@nodes.101 //@nodes.102 //@nodes.112">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.mybatis.jpetstore.web.actions.AbstractActionBean" nodes="//@nodes.103 //@nodes.104 //@nodes.105">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.util.List&lt;LineItem>" nodes="//@nodes.113 //@nodes.114" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.lang.Integer" nodes="//@nodes.115 //@nodes.141" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.util.HashMap&lt;String,Object>" nodes="//@nodes.116" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.lang.RuntimeException" nodes="//@nodes.118" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="org.apache.log4j.Category" nodes="//@nodes.119" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.http.javanet.NetHttpTransport" nodes="//@nodes.120" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.http.HttpRequestFactory" nodes="//@nodes.121 //@nodes.132" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.http.GenericUrl" nodes="//@nodes.122" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.http.HttpRequest" nodes="//@nodes.123" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.http.HttpResponse" nodes="//@nodes.124 //@nodes.127" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.fasterxml.jackson.databind.ObjectMapper" nodes="//@nodes.125 //@nodes.126" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.lang.Throwable" nodes="//@nodes.128" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.json.jackson2.JacksonFactory" nodes="//@nodes.129" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.lang.Object" nodes="//@nodes.130" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="com.google.api.client.http.json.JsonHttpContent" nodes="//@nodes.131" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.util.ArrayList&lt;Product>" nodes="//@nodes.133" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.lang.String" nodes="//@nodes.134 //@nodes.136 //@nodes.144 //@nodes.148" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.util.List&lt;Product>" nodes="//@nodes.135" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="net.sourceforge.stripes.action.ForwardResolution" nodes="//@nodes.137 //@nodes.147" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="net.sourceforge.stripes.action.ActionBeanContext" nodes="//@nodes.138" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.util.Iterator&lt;CartItem>" nodes="//@nodes.139 //@nodes.140 //@nodes.143" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="javax.servlet.ServletRequest" nodes="//@nodes.142" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="javax.servlet.http.HttpServletRequest" nodes="//@nodes.145" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="javax.servlet.http.HttpSession" nodes="//@nodes.146 //@nodes.150 //@nodes.151" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="net.sourceforge.stripes.action.RedirectResolution" nodes="//@nodes.149" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="java.util.List&lt;Message>" nodes="//@nodes.152" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+  <modules name="net.sourceforge.stripes.action.SimpleMessage" nodes="//@nodes.153" kind="FRAMEWORK">
+    <derivedFrom xsi:type="hypergraph:TypeTrace"/>
+  </modules>
+</hypergraph:ModularHypergraph>

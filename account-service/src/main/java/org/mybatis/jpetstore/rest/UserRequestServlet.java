@@ -1,7 +1,6 @@
 package org.mybatis.jpetstore.rest;
 
 import java.io.IOException;
-import java.util.Collection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,15 +17,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Servlet implementation class AccountRestServlet
  */
 @WebServlet("/request-user")
-public class AccountGetUserRestServlet extends AbstractServlet {
+public class UserRequestServlet extends AbstractServlet {
     private static final long serialVersionUID = 1L;
 
-    private final static Logger LOG = Logger.getLogger(AccountGetUserRestServlet.class);
+    private final static Logger LOG = Logger.getLogger(UserRequestServlet.class);
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountGetUserRestServlet() {
+    public UserRequestServlet() {
         super();
     }
 
@@ -36,23 +35,19 @@ public class AccountGetUserRestServlet extends AbstractServlet {
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
-        AccountGetUserRestServlet.LOG.info("request-user");
         final String username = request.getParameter("username");
         if (username != null) {
-            AccountGetUserRestServlet.LOG.info("username is " + username);
             final String password = request.getParameter("password");
 
             if (password != null) {
+                UserRequestServlet.LOG.info("login with " + username);
                 this.sendResult(response, this.accountService.getAccount(username, password));
             } else {
-                AccountGetUserRestServlet.LOG.info("no password for " + username);
+                UserRequestServlet.LOG.info("user request " + username);
                 this.sendResult(response, this.accountService.getAccount(username));
             }
 
         } else {
-            final ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(response.getWriter(), null);
-
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
 
@@ -60,15 +55,9 @@ public class AccountGetUserRestServlet extends AbstractServlet {
 
     private void sendResult(final HttpServletResponse response, final Account account) throws IOException {
         if (account == null) {
-            AccountGetUserRestServlet.LOG.info("account is empty");
-            final Collection<Account> accounts = this.accountService.getAllAccounts();
-            AccountGetUserRestServlet.LOG.info("found accounts " + accounts.size());
-            for (final Account ac : accounts) {
-                AccountGetUserRestServlet.LOG.info("account is " + ac.getUsername());
-            }
+            UserRequestServlet.LOG.info("account not found");
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
         } else {
-            AccountGetUserRestServlet.LOG.info("account is " + account.getUsername());
             final ObjectMapper mapper = new ObjectMapper();
             mapper.writeValue(response.getWriter(), account);
         }

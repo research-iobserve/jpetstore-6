@@ -4,7 +4,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
 import org.apache.log4j.Logger;
-import org.mybatis.jpetstore.service.AccountService;
+import org.mybatis.jpetstore.service.CatalogService;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -13,7 +13,7 @@ public abstract class AbstractServlet extends HttpServlet {
 
     private final static Logger LOG = Logger.getLogger(AbstractServlet.class);
 
-    protected transient AccountService accountService;
+    protected transient CatalogService catalogService;
 
     /**
      *
@@ -33,8 +33,8 @@ public abstract class AbstractServlet extends HttpServlet {
         // The following line does the magic
         this.ctx.autowireBean(this);
 
-        this.accountService = (AccountService) context.getBean("AccountService");
-        AbstractServlet.LOG.info("bean found " + this.accountService);
+        this.catalogService = (CatalogService) context.getBean("CatalogService");
+        AbstractServlet.LOG.info("bean found " + this.catalogService);
 
     }
 
