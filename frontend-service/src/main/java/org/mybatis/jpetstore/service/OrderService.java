@@ -16,21 +16,24 @@
  */
 package org.mybatis.jpetstore.service;
 
-import java.util.HashMap;
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.List;
-import java.util.Map;
 
-import org.mybatis.jpetstore.domain.Item;
-import org.mybatis.jpetstore.domain.LineItem;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.log4j.Logger;
 import org.mybatis.jpetstore.domain.Order;
-import org.mybatis.jpetstore.domain.Sequence;
-import org.mybatis.jpetstore.mapper.IItemMapper;
-import org.mybatis.jpetstore.mapper.ILineItemMapper;
-import org.mybatis.jpetstore.mapper.IOrderMapper;
-import org.mybatis.jpetstore.mapper.ISequenceMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.javanet.NetHttpTransport;
 
 /**
  * The Class OrderService.
@@ -39,94 +42,134 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class OrderService {
+	
+	private final static Logger LOG = Logger.getLogger(CatalogService.class);
+	private static final String ORDER_SERVICE = "http://172.17.0.2:8080/jpetstore-order/";
+	private static final String ORDERS_BY_USERNAME = ORDER_SERVICE + "orders-by-username?username=";
+	private static final String ORDER_BY_ID = ORDER_SERVICE + "order-by-id?orderId=";
+	private static final String INSERT_ORDER = ORDER_SERVICE + "insert-order";
+	private static final String NEXT_ID = ORDER_SERVICE + "nextId?name=";
 
-  @Autowired
-  private IItemMapper itemMapper;
-  @Autowired
-  private IOrderMapper orderMapper;
-  @Autowired
-  private ISequenceMapper sequenceMapper;
-  @Autowired
-  private ILineItemMapper lineItemMapper;
+	/**
+	 * Insert order.
+	 *
+	 * @param order
+	 *            the order
+	 */
+	@Transactional
+	public void insertOrder(final Order order) {
+		postOperation(INSERT_ORDER, order);
+	}
 
-  /**
-   * Insert order.
-   *
-   * @param order
-   *            the order
-   */
-  @Transactional
-  public void insertOrder(final Order order) {
-    order.setOrderId(this.getNextId("ordernum"));
-    for (int i = 0; i < order.getLineItems().size(); i++) {
-      final LineItem lineItem = order.getLineItems().get(i);
-      final String itemId = lineItem.getItemId();
-      final Integer increment = new Integer(lineItem.getQuantity());
-      final Map<String, Object> param = new HashMap<String, Object>(2);
-      param.put("itemId", itemId);
-      param.put("increment", increment);
-      this.itemMapper.updateInventoryQuantity(param);
+	/**
+	 * Gets the order.
+	 *
+	 * @param orderId
+	 *            the order id
+	 * @return the order
+	 */
+	@Transactional
+	public Order getOrder(final int orderId) {
+		return getSingleValue(ORDER_BY_ID + orderId, Order.class);
+	}
+
+	/**
+	 * Gets the orders by username.
+	 *
+	 * @param username
+	 *            the username
+	 * @return the orders by username
+	 */
+	public List<Order> getOrdersByUsername(final String username) {
+		return getMultipleValues(ORDERS_BY_USERNAME + username, Order.class);
+	}
+
+	/**
+	 * Gets the next id.
+	 *
+	 * @param name
+	 *            the name
+	 * @return the next id
+	 */
+	public int getNextId(final String name) {
+		return getSingleValue(NEXT_ID, Integer.class);
+	}
+
+	private <T> T getSingleValue(final String url, final Class<T> clazz) {
+		try {
+			LOG.info("get from remote " + url);
+			final NetHttpTransport httpTransport = new NetHttpTransport();
+			final HttpRequest request = httpTransport.createRequestFactory().buildGetRequest(new GenericUrl(url));
+			final HttpResponse response = request.execute();
+
+			if (response.getStatusCode() == 200) {
+				final ObjectMapper mapper = new ObjectMapper();
+				final T object = mapper.readValue(response.getContent(), clazz);
+
+				return object;
+			} else {
+				return null;
+			}
+		} catch (final IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	private <T> List<T> getMultipleValues(final String url, final Class<T> clazz) {
+		try {
+			LOG.info("get from remote " + url);
+			final NetHttpTransport httpTransport = new NetHttpTransport();
+			final HttpRequest request = httpTransport.createRequestFactory().buildGetRequest(new GenericUrl(url));
+			final HttpResponse response = request.execute();
+
+			if (response.getStatusCode() == 200) {
+				final ObjectMapper mapper = new ObjectMapper();
+				final List<T> list = mapper.readValue(response.getContent(),
+						mapper.getTypeFactory().constructCollectionType(List.class, clazz));
+
+				return list;
+			} else {
+				return null;
+			}
+		} catch (final IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+     * Post an object.
+     * 
+     * @param url where
+     * @param object the object
+     * @return result code
+     */
+    private <T> int postOperation(final String url, final T object) {      
+        StringWriter sw = new StringWriter();
+        
+        final ObjectMapper mapper = new ObjectMapper();
+        try {
+			mapper.writeValue(sw, object);
+						
+			HttpClient httpClient = HttpClientBuilder.create().build(); 
+
+	        try {
+	            HttpPost request = new HttpPost(url);
+	            StringEntity params = new StringEntity(sw.toString());
+	            request.addHeader("content-type", "application/json");
+	            request.setEntity(params);
+	            org.apache.http.HttpResponse response = httpClient.execute(request);
+
+	            return response.getStatusLine().getStatusCode();
+	        } catch (Exception ex) {
+	        	ex.printStackTrace();
+	        	return 404;
+	        }
+		} catch (IOException e) {
+			e.printStackTrace();
+			return 404;
+		}
     }
-
-    this.orderMapper.insertOrder(order);
-    this.orderMapper.insertOrderStatus(order);
-    for (int i = 0; i < order.getLineItems().size(); i++) {
-      final LineItem lineItem = order.getLineItems().get(i);
-      lineItem.setOrderId(order.getOrderId());
-      this.lineItemMapper.insertLineItem(lineItem);
-    }
-  }
-
-  /**
-   * Gets the order.
-   *
-   * @param orderId
-   *            the order id
-   * @return the order
-   */
-  @Transactional
-  public Order getOrder(final int orderId) {
-    final Order order = this.orderMapper.getOrder(orderId);
-    order.setLineItems(this.lineItemMapper.getLineItemsByOrderId(orderId));
-
-    for (int i = 0; i < order.getLineItems().size(); i++) {
-      final LineItem lineItem = order.getLineItems().get(i);
-      final Item item = this.itemMapper.getItem(lineItem.getItemId());
-      item.setQuantity(this.itemMapper.getInventoryQuantity(lineItem.getItemId()));
-      lineItem.setItem(item);
-    }
-
-    return order;
-  }
-
-  /**
-   * Gets the orders by username.
-   *
-   * @param username
-   *            the username
-   * @return the orders by username
-   */
-  public List<Order> getOrdersByUsername(final String username) {
-    return this.orderMapper.getOrdersByUsername(username);
-  }
-
-  /**
-   * Gets the next id.
-   *
-   * @param name
-   *            the name
-   * @return the next id
-   */
-  public int getNextId(final String name) {
-    Sequence sequence = new Sequence(name, -1);
-    sequence = this.sequenceMapper.getSequence(sequence);
-    if (sequence == null) {
-      throw new RuntimeException(
-          "Error: A null sequence was returned from the database (could not get next " + name + " sequence).");
-    }
-    final Sequence parameterObject = new Sequence(name, sequence.getNextId() + 1);
-    this.sequenceMapper.updateSequence(parameterObject);
-    return sequence.getNextId();
-  }
 
 }
