@@ -50,6 +50,7 @@ public class InsertAccountServlet extends AbstractServlet {
         final Account account = mapper.readValue(request.getReader(), Account.class);
 
         if (account != null) {
+        	LOG.error("account " + account.toString());
             this.accountService.insertAccount(account);
         } else {
             InsertAccountServlet.LOG.error("insert-account NO ACCOUNT to insert");

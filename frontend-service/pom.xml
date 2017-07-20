@@ -15,7 +15,21 @@
 	<name>JPetStore Demo 6 - Frontend Service</name>
 
 	<build>
-		<finalName>jpetstore-frontend</finalName>		
+		<finalName>jpetstore-frontend</finalName>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.22.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+	</dependencies>
 
 </project>

@@ -17,7 +17,12 @@
 package org.mybatis.jpetstore.service;
 
 import java.io.IOException;
+import java.io.StringWriter;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.log4j.Logger;
 import org.mybatis.jpetstore.domain.Account;
 import org.springframework.stereotype.Service;
@@ -28,8 +33,6 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.http.json.JsonHttpContent;
-import com.google.api.client.json.jackson2.JacksonFactory;
 
 /**
  * The Class AccountService.
@@ -116,27 +119,38 @@ public class AccountService {
         this.postOperation(AccountService.UPDATE_ACCOUNT_REQUEST, account);
     }
 
-    private int postOperation(final String url, final Object object) {
-        final NetHttpTransport httpTransport = new NetHttpTransport();
-
-        final JacksonFactory jsonFactory = JacksonFactory.getDefaultInstance();
-
-        AccountService.LOG.info("Object is " + (object != null ? "yes" : "no"));
-        AccountService.LOG.info("url " + url);
-        AccountService.LOG.info("object " + object.toString());
-
-        final JsonHttpContent content = new JsonHttpContent(jsonFactory, object);
-
+    /**
+     * Post an object.
+     * 
+     * @param url where
+     * @param object the object
+     * @return result code
+     */
+    private <T> int postOperation(final String url, final T object) {      
+        StringWriter sw = new StringWriter();
+        
+        final ObjectMapper mapper = new ObjectMapper();
         try {
-            final HttpRequest request = httpTransport.createRequestFactory().buildPostRequest(new GenericUrl(url),
-                    content);
-            final HttpResponse response = request.execute();
-            AccountService.LOG.info("object " + response.getStatusCode() + " " + response.getStatusMessage());
-            return response.getStatusCode();
-        } catch (final IOException e) {
-            e.printStackTrace();
-            return 404;
-        }
+			mapper.writeValue(sw, object);
+						
+			HttpClient httpClient = HttpClientBuilder.create().build(); 
+
+	        try {
+	            HttpPost request = new HttpPost(url);
+	            StringEntity params = new StringEntity(sw.toString());
+	            request.addHeader("content-type", "application/json");
+	            request.setEntity(params);
+	            org.apache.http.HttpResponse response = httpClient.execute(request);
+
+	            return response.getStatusLine().getStatusCode();
+	        } catch (Exception ex) {
+	        	ex.printStackTrace();
+	        	return 404;
+	        }
+		} catch (IOException e) {
+			e.printStackTrace();
+			return 404;
+		}
     }
 
 }
