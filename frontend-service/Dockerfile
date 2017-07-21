@@ -1,4 +1,4 @@
-FROM iobserve-tomcat
+FROM tomcat:8.0
 
 COPY target/jpetstore-frontend.war $CATALINA_HOME/webapps/
 
