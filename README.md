@@ -45,5 +45,10 @@ root directory with:
 
 To stop, you shoud use `docker-compose down` in a separate terminal.
 
+## Access
+
+You can access the application via
+
+`http://localhost:8181/jpetstore-frontend`
 
 
