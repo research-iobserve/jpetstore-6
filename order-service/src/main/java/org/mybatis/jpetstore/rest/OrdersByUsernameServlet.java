@@ -34,7 +34,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/orders-by-username")
-public class OrdersByUsernameServlet extends AbstractServlet {
+public class OrdersByUsernameServlet extends AbstractOrderServlet {
 
     /**
      *
@@ -50,7 +50,7 @@ public class OrdersByUsernameServlet extends AbstractServlet {
             throws ServletException, IOException {
     	String username = request.getParameter("username");
     	if (username != null)
-    		this.sendResult(response, this.orderService.getOrdersByUsername(username));
+    		this.sendResult(response, this.service.getOrdersByUsername(username));
     	else
     		response.sendError(HttpServletResponse.SC_BAD_REQUEST);
     }

@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Servlet implementation class AccountRestServlet
  */
 @WebServlet("/insert-account")
-public class InsertOrderServlet extends AbstractServlet {
+public class InsertOrderServlet extends AbstractOrderServlet {
     private static final long serialVersionUID = 1L;
 
     private final static Logger LOG = Logger.getLogger(InsertOrderServlet.class);
@@ -51,7 +51,7 @@ public class InsertOrderServlet extends AbstractServlet {
 
         if (order != null) {
         	LOG.error("order " + order.toString());
-            this.orderService.insertOrder(order);
+            this.service.insertOrder(order);
         } else {
             InsertOrderServlet.LOG.error("insert-order NO ORDER to insert");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

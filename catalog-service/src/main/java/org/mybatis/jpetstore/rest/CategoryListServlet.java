@@ -34,7 +34,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/categories")
-public class CategoryListServlet extends AbstractServlet {
+public class CategoryListServlet extends AbstractCatalogServlet {
 
     /**
      *
@@ -48,7 +48,7 @@ public class CategoryListServlet extends AbstractServlet {
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
-        this.sendResult(response, this.catalogService.getCategoryList());
+        this.sendResult(response, this.service.getCategoryList());
     }
 
     /**

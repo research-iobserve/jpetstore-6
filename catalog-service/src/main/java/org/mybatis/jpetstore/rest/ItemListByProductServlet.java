@@ -34,7 +34,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/items-by-product")
-public class ItemListByProductServlet extends AbstractServlet {
+public class ItemListByProductServlet extends AbstractCatalogServlet {
 
     /**
      *
@@ -50,7 +50,7 @@ public class ItemListByProductServlet extends AbstractServlet {
             throws ServletException, IOException {
         final String productId = request.getParameter("productId");
         if (productId != null) {
-            this.sendResult(response, this.catalogService.getItemListByProduct(productId));
+            this.sendResult(response, this.service.getItemListByProduct(productId));
         } else {
             ItemListByProductServlet.LOG.error("no product specified");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

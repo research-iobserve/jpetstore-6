@@ -32,7 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/item")
-public class NextIdServlet extends AbstractServlet {
+public class NextIdServlet extends AbstractOrderServlet {
 
     /**
      *
@@ -48,7 +48,7 @@ public class NextIdServlet extends AbstractServlet {
             throws ServletException, IOException {
         final String name = request.getParameter("name");
         if (name != null) {
-            this.sendResult(response, this.orderService.getNextId(name));
+            this.sendResult(response, this.service.getNextId(name));
         } else {
             NextIdServlet.LOG.error("no name specified");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

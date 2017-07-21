@@ -16,20 +16,12 @@
  */
 package org.mybatis.jpetstore.service;
 
-import java.io.IOException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.mybatis.jpetstore.domain.Category;
 import org.mybatis.jpetstore.domain.Item;
 import org.mybatis.jpetstore.domain.Product;
 import org.springframework.stereotype.Service;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpResponse;
-import com.google.api.client.http.javanet.NetHttpTransport;
 
 /**
  * The Class CatalogService.
@@ -37,9 +29,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
  * @author Eduardo Macarron
  */
 @Service
-public class CatalogService {
-
-    private final static Logger LOG = Logger.getLogger(CatalogService.class);
+public class CatalogService extends AbstractService {
 
     private static final String CATALOG_SERVICE = "http://172.17.0.2:8080/jpetstore-catalog/";
 
@@ -145,49 +135,6 @@ public class CatalogService {
     public boolean isItemInStock(final String itemId) {
         return this.getSingleValue(CatalogService.CATALOG_SERVICE + CatalogService.IS_ITEM_IN_STOCK + itemId,
                 Boolean.class);
-    }
-
-    private <T> T getSingleValue(final String url, final Class<T> clazz) {
-        try {
-            CatalogService.LOG.info("get from remote " + url);
-            final NetHttpTransport httpTransport = new NetHttpTransport();
-            final HttpRequest request = httpTransport.createRequestFactory().buildGetRequest(new GenericUrl(url));
-            final HttpResponse response = request.execute();
-
-            if (response.getStatusCode() == 200) {
-                final ObjectMapper mapper = new ObjectMapper();
-                final T object = mapper.readValue(response.getContent(), clazz);
-
-                return object;
-            } else {
-                return null;
-            }
-        } catch (final IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private <T> List<T> getMultipleValues(final String url, final Class<T> clazz) {
-        try {
-            CatalogService.LOG.info("get from remote " + url);
-            final NetHttpTransport httpTransport = new NetHttpTransport();
-            final HttpRequest request = httpTransport.createRequestFactory().buildGetRequest(new GenericUrl(url));
-            final HttpResponse response = request.execute();
-
-            if (response.getStatusCode() == 200) {
-                final ObjectMapper mapper = new ObjectMapper();
-                final List<T> list = mapper.readValue(response.getContent(),
-                        mapper.getTypeFactory().constructCollectionType(List.class, clazz));
-
-                return list;
-            } else {
-                return null;
-            }
-        } catch (final IOException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
 }

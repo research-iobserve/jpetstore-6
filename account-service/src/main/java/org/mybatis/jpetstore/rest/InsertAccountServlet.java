@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Servlet implementation class AccountRestServlet
  */
 @WebServlet("/insert-account")
-public class InsertAccountServlet extends AbstractServlet {
+public class InsertAccountServlet extends AbstractAccountServlet {
     private static final long serialVersionUID = 1L;
 
     private final static Logger LOG = Logger.getLogger(InsertAccountServlet.class);
@@ -51,7 +51,7 @@ public class InsertAccountServlet extends AbstractServlet {
 
         if (account != null) {
         	LOG.error("account " + account.toString());
-            this.accountService.insertAccount(account);
+            this.service.insertAccount(account);
         } else {
             InsertAccountServlet.LOG.error("insert-account NO ACCOUNT to insert");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

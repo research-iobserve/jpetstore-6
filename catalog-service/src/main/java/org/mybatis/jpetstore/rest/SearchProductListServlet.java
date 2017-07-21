@@ -34,7 +34,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/search-products")
-public class SearchProductListServlet extends AbstractServlet {
+public class SearchProductListServlet extends AbstractCatalogServlet {
 
     /**
      *
@@ -50,7 +50,7 @@ public class SearchProductListServlet extends AbstractServlet {
             throws ServletException, IOException {
         final String keywords = request.getParameter("keywords");
         if (keywords != null) {
-            this.sendResult(response, this.catalogService.searchProductList(keywords));
+            this.sendResult(response, this.service.searchProductList(keywords));
         } else {
             SearchProductListServlet.LOG.error("no keyword specified");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

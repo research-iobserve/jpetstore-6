@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Servlet implementation class AccountRestServlet
  */
 @WebServlet("/request-user")
-public class UserRequestServlet extends AbstractServlet {
+public class UserRequestServlet extends AbstractAccountServlet {
     private static final long serialVersionUID = 1L;
 
     private final static Logger LOG = Logger.getLogger(UserRequestServlet.class);
@@ -41,10 +41,10 @@ public class UserRequestServlet extends AbstractServlet {
 
             if (password != null) {
                 UserRequestServlet.LOG.info("login with " + username);
-                this.sendResult(response, this.accountService.getAccount(username, password));
+                this.sendResult(response, this.service.getAccount(username, password));
             } else {
                 UserRequestServlet.LOG.info("user request " + username);
-                this.sendResult(response, this.accountService.getAccount(username));
+                this.sendResult(response, this.service.getAccount(username));
             }
 
         } else {

@@ -33,7 +33,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/item")
-public class ItemServlet extends AbstractServlet {
+public class ItemServlet extends AbstractCatalogServlet {
 
     /**
      *
@@ -49,7 +49,7 @@ public class ItemServlet extends AbstractServlet {
             throws ServletException, IOException {
         final String itemId = request.getParameter("itemId");
         if (itemId != null) {
-            this.sendResult(response, this.catalogService.getItem(itemId));
+            this.sendResult(response, this.service.getItem(itemId));
         } else {
             ItemServlet.LOG.error("no item id specified");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

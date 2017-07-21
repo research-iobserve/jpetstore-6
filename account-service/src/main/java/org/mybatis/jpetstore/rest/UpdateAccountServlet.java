@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Reiner Jung
  */
 @WebServlet("/update-account")
-public class UpdateAccountServlet extends AbstractServlet {
+public class UpdateAccountServlet extends AbstractAccountServlet {
     private static final long serialVersionUID = 1L;
 
     private final static Logger LOG = Logger.getLogger(UpdateAccountServlet.class);
@@ -52,7 +52,7 @@ public class UpdateAccountServlet extends AbstractServlet {
         final Account account = mapper.readValue(request.getReader(), Account.class);
 
         if (account != null) {
-            this.accountService.updateAccount(account);
+            this.service.updateAccount(account);
         } else {
             UpdateAccountServlet.LOG.error("update-account: NO ACCOUNT to update");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);

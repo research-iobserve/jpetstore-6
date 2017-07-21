@@ -4,16 +4,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
 import org.apache.log4j.Logger;
-import org.mybatis.jpetstore.service.CatalogService;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-public abstract class AbstractServlet extends HttpServlet {
+public abstract class AbstractServlet<T> extends HttpServlet {
 
     private final static Logger LOG = Logger.getLogger(AbstractServlet.class);
 
-    protected transient CatalogService catalogService;
+    protected transient T service;
 
     /**
      *
@@ -21,8 +20,8 @@ public abstract class AbstractServlet extends HttpServlet {
     private static final long serialVersionUID = -230552059269908269L;
     protected AutowireCapableBeanFactory ctx;
 
-    @Override
-    public void init() throws ServletException {
+    @SuppressWarnings("unchecked")
+	public void init(String beanName) throws ServletException {
         super.init();
 
         final WebApplicationContext context = WebApplicationContextUtils
@@ -33,8 +32,8 @@ public abstract class AbstractServlet extends HttpServlet {
         // The following line does the magic
         this.ctx.autowireBean(this);
 
-        this.catalogService = (CatalogService) context.getBean("CatalogService");
-        AbstractServlet.LOG.info("bean found " + this.catalogService);
+        this.service = (T) context.getBean(beanName);
+        AbstractServlet.LOG.info("bean found " + this.service);
 
     }
 

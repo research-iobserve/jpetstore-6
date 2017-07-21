@@ -9,21 +9,13 @@
 		<version>6.0.3-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>order-service</artifactId>
-	<packaging>war</packaging>
+	<artifactId>core-functionality</artifactId>
+	<packaging>jar</packaging>
 
-	<name>JPetStore Demo 6 - Order Service</name>
+	<name>JPetStore Demo 6 - Common functionality</name>
 
 	<build>
-		<finalName>jpetstore-order</finalName>		
+		<finalName>jpetstore-core-functionality</finalName>		
 	</build>
-	
-	<dependencies>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>core-functionality</artifactId>
-			<version>6.0.3-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 
 </project>

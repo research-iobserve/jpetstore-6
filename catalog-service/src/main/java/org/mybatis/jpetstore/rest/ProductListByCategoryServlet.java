@@ -34,7 +34,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @WebServlet("/products-by-category")
-public class ProductListByCategoryServlet extends AbstractServlet {
+public class ProductListByCategoryServlet extends AbstractCatalogServlet {
 
     private final static Logger LOG = Logger.getLogger(ProductListByCategoryServlet.class);
 
@@ -52,7 +52,7 @@ public class ProductListByCategoryServlet extends AbstractServlet {
 
         final String categoryId = request.getParameter("categoryId");
         if (categoryId != null) {
-            this.sendResult(response, this.catalogService.getProductListByCategory(categoryId));
+            this.sendResult(response, this.service.getProductListByCategory(categoryId));
         } else {
             ProductListByCategoryServlet.LOG.error("no category specified");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);
