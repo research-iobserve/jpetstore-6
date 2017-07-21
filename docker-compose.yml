@@ -1,0 +1,17 @@
+version: '2'
+services:
+  frontend:
+    build: ./frontend-service
+    ports:
+      - "8181:8080"
+    links:
+      - "account"
+      - "catalog"
+      - "order"
+  account:
+    build: ./account-service
+  catalog:
+    build: ./catalog-service
+  order:
+    build: ./order-service
+
