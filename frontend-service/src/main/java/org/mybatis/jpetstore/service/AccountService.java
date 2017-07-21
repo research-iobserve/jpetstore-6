@@ -18,7 +18,6 @@ package org.mybatis.jpetstore.service;
 
 import org.mybatis.jpetstore.domain.Account;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * The Class AccountService.
@@ -28,7 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AccountService extends AbstractService {
 
-    private static final String ACCOUNT_SERVICE = "http://172.17.0.2:8080/jpetstore-account/";
+    private static final String ACCOUNT_SERVICE = "http://account:8080/jpetstore-account/";
     private static final String REQUEST_USER = AccountService.ACCOUNT_SERVICE + "request-user";
     private static final String INSERT_ACCOUNT_REQUEST = AccountService.ACCOUNT_SERVICE + "insert-account";
     private static final String UPDATE_ACCOUNT_REQUEST = AccountService.ACCOUNT_SERVICE + "update-account";
@@ -65,7 +64,6 @@ public class AccountService extends AbstractService {
      * @param account
      *            the account
      */
-    @Transactional
     public void insertAccount(final Account account) {
         LOG.info("insert " + account.toString());
         this.postOperation(AccountService.INSERT_ACCOUNT_REQUEST, account);
@@ -77,7 +75,6 @@ public class AccountService extends AbstractService {
      * @param account
      *            the account
      */
-    @Transactional
     public void updateAccount(final Account account) {
         LOG.info("update " + account.toString());
         this.postOperation(AccountService.UPDATE_ACCOUNT_REQUEST, account);

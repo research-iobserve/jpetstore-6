@@ -29,10 +29,13 @@
      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
      http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
+
     <!-- enable component scanning and autowire (beware that this does not enable mapper scanning!) -->    
     <context:component-scan base-package="org.mybatis.jpetstore.service" />
 
     <!-- enable transaction demarcation with annotations -->
     <tx:annotation-driven />
-
+    
+    <bean id="CatalogService" class="org.mybatis.jpetstore.service.CatalogService">
+ 	</bean>
 </beans>

@@ -20,7 +20,6 @@ import java.util.List;
 
 import org.mybatis.jpetstore.domain.Order;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * The Class OrderService.
@@ -30,7 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class OrderService extends AbstractService {
 	
-	private static final String ORDER_SERVICE = "http://172.17.0.2:8080/jpetstore-order/";
+	private static final String ORDER_SERVICE = "http://order:8080/jpetstore-order/";
 	private static final String ORDERS_BY_USERNAME = ORDER_SERVICE + "orders-by-username?username=";
 	private static final String ORDER_BY_ID = ORDER_SERVICE + "order-by-id?orderId=";
 	private static final String INSERT_ORDER = ORDER_SERVICE + "insert-order";
@@ -42,7 +41,6 @@ public class OrderService extends AbstractService {
 	 * @param order
 	 *            the order
 	 */
-	@Transactional
 	public void insertOrder(final Order order) {
 		postOperation(INSERT_ORDER, order);
 	}
@@ -54,7 +52,6 @@ public class OrderService extends AbstractService {
 	 *            the order id
 	 * @return the order
 	 */
-	@Transactional
 	public Order getOrder(final int orderId) {
 		return getSingleValue(ORDER_BY_ID + orderId, Order.class);
 	}
