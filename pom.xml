@@ -49,6 +49,13 @@
     </site>
   </distributionManagement>
 
+<repositories>
+		<repository>
+			<id>kieker</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+
   <dependencies>
     <dependency>
       <groupId>commons-logging</groupId>
@@ -139,31 +146,171 @@
       <version>4.5.1</version>
       <scope>test</scope>
     </dependency>
+<dependency>
+			<groupId>org.iobserve</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.iobserve</groupId>
+			<artifactId>monitoring</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.7</version>
+		</dependency>
   </dependencies>
 
   <build>
     <finalName>jpetstore</finalName>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <configuration>
-            <locales>en,es,ja,ko</locales>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <configuration>
-            <overwrite>true</overwrite>
-          </configuration>
-        </plugin>
+
+<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.cargo</groupId>
+					<artifactId>cargo-maven2-plugin</artifactId>
+					<version>1.6.4</version>
+					<configuration>
+						<container>
+							<containerId>tomcat8x</containerId>
+							<type>remote</type>
+							<systemProperties>
+								<cargo.jvmargs>-XX:MaxPermSize=256M -Xmx1024m</cargo.jvmargs>
+							</systemProperties>
+						</container>
+						<configuration>
+							<type>runtime</type>
+							<properties>
+								<cargo.hostname>172.17.0.2</cargo.hostname>
+								<cargo.servlet.port>8080</cargo.servlet.port>
+								<cargo.tomcat.manager.url>http://172.17.0.2:8080/manager</cargo.tomcat.manager.url>
+								<cargo.remote.username>tomcat</cargo.remote.username>
+								<cargo.remote.password>tomcat</cargo.remote.password>
+							</properties>
+						</configuration>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<version>3.0</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.mycila</groupId>
+							<artifactId>license-maven-plugin-git</artifactId>
+							<version>3.0</version>
+							<scope>compile</scope>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<header>${project.basedir}/license.txt</header>
+						<excludes>
+							<exclude>**/*.ctrl</exclude>
+							<exclude>**/*.dat</exclude>
+							<exclude>**/*.lck</exclude>
+							<exclude>**/*.log</exclude>
+							<exclude>**/*.xml</exclude>
+							<exclude>**/*.sed</exclude>
+							<exclude>**/.checkstyle</exclude>
+							<exclude>**/*.xmi</exclude>
+							<exclude>**/*.cfg</exclude>
+							<exclude>**/*maven-wrapper.properties</exclude>
+							<exclude>.factorypath</exclude>
+							<exclude>.gitattributes</exclude>
+							<exclude>mvnw</exclude>
+							<exclude>mvnw.cmd</exclude>
+							<exclude>ICLA</exclude>
+							<exclude>LICENSE</exclude>
+							<exclude>KEYS</exclude>
+							<exclude>NOTICE</exclude>
+						</excludes>
+						<mapping>
+							<xml.vm>XML_STYLE</xml.vm>
+						</mapping>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<configuration>
+						<locales>en,es,ja,ko</locales>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<overwrite>true</overwrite>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>net.revelc.code.formatter</groupId>
+					<artifactId>formatter-maven-plugin</artifactId>
+					<version>2.0.1</version>
+					<configuration>
+						<lineEnding>LF</lineEnding>
+						<encoding>UTF-8</encoding>
+						<configFile>${project.basedir}/eclipse-code-formatter.xml</configFile>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>format</goal>
+							</goals>
+							<configuration>
+								<configFile>${project.basedir}/eclipse-code-formatter.xml</configFile>
+							</configuration>
+						</execution>
+					</executions>
+					<dependencies>
+						<dependency>
+							<groupId>com.github.hazendaz</groupId>
+							<artifactId>build-tools</artifactId>
+							<version>1.1.4</version>
+							<scope>compile</scope>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>2.17</version>
+					<configuration>
+						<configLocation>${project.basedir}/checkstyle-rules.xml</configLocation>
+						<encoding>UTF-8</encoding>
+						<consoleOutput>true</consoleOutput>
+						<failsOnError>true</failsOnError>
+						<linkXRef>false</linkXRef>
+					</configuration>
+					<executions>
+						<execution>
+							<id>validate</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			
+        
+        
+       
         <plugin>
           <groupId>org.codehaus.cargo</groupId>
           <artifactId>cargo-maven2-plugin</artifactId>
