@@ -28,7 +28,8 @@
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+		<listener-class>org.iobserve.monitoring.probe.servlet.SessionCollectorListener</listener-class>
+ 	</listener>
 	<filter>
 		<display-name>Stripes Filter</display-name>
 		<filter-name>StripesFilter</filter-name>
