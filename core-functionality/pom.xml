@@ -14,8 +14,20 @@
 
 	<name>JPetStore Demo 6 - Common functionality</name>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.iobserve</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.iobserve</groupId>
+			<artifactId>monitoring</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<finalName>jpetstore-core-functionality</finalName>		
 	</build>
-
+	
 </project>

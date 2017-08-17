@@ -82,6 +82,9 @@
 							<includes>
 								<include>**/**.java</include>
 							</includes>
+							<excludes>
+								<exclude>**/ScreenTransitionIT.java</exclude>
+							</excludes>
 						</source>
 					</sources>
 				</configuration>
