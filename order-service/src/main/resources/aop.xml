@@ -6,6 +6,7 @@
 		<!-- Use the exclude/include directives to specify which classes are (not) 
 			to be considered for weaving. Some examples are given below. -->
 		<include within="org.mybatis..*" />
+		<exclude within="org.mybatis.jpetstore.rest.AbstractOrderServlet"/>
 	</weaver>
 
 	<aspects>
