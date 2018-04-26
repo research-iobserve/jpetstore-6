@@ -28,6 +28,10 @@
 		<param-value>StripesResources</param-value>
 	</context-param>
 	<context-param>
+		<param-name>countryCode</param-name>
+		<param-value>276</param-value>
+	</context-param>
+	<context-param>
     	<param-name>contextConfigLocation</param-name>
     	<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
@@ -78,6 +82,6 @@
 
 	<!-- End: Integration of Kieker's SessionAndTraceRegistrationFilter -->
 	<listener>
-		<listener-class>org.iobserve.monitoring.probe.servlet.DeploymentContextListener</listener-class>
+		<listener-class>org.iobserve.monitoring.probe.servlet.DeploymentGeolocationContextListener</listener-class>
 	</listener>
 </web-app>

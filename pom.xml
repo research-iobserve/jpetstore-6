@@ -133,11 +133,28 @@
 			<version>4.5.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.iobserve</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.iobserve</groupId>
+			<artifactId>monitoring</artifactId>
+			<version>0.0.3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.7</version>
+		</dependency>
 	</dependencies>
 
 	<modules>
 		<module>frontend-service</module>
 		<module>account-service</module>
+		<module>usa-account-service</module>
 		<module>catalog-service</module>
 		<module>order-service</module>
 		<module>core-functionality</module>
