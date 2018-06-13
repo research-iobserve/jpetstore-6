@@ -10,6 +10,7 @@ spec:
     port: 8080
     targetPort: 8080
 ---
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: order
@@ -32,7 +33,7 @@ spec:
       restartPolicy: Always
 status: {}
 ---
-apiVersion: v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: account
@@ -55,7 +56,7 @@ spec:
       restartPolicy: Always
 status: {}
 ---
-apiVersion: v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: catalog
@@ -78,7 +79,7 @@ spec:
       restartPolicy: Always
 status: {}
 ---
-apiVersion: v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: frontend
