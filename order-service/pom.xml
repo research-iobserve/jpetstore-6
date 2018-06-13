@@ -33,39 +33,5 @@
 
 	<build>
 		<finalName>jpetstore-order</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.8</version>
-				<configuration>
-					<source>${java-version}</source>
-					<target>${java-version}</target>
-					<complianceLevel>${java-version}</complianceLevel>
-					<aspectLibraries>
-						<aspectLibrary>
-							<groupId>net.kieker-monitoring</groupId>
-							<artifactId>kieker</artifactId>
-						</aspectLibrary>
-					</aspectLibraries>
-					<xmlConfigured>${basedir}/src/main/resources/aop.xml</xmlConfigured>
-					<sources>
-						<source>
-							<basedir>${basedir}/src/main/java</basedir>
-							<includes>
-								<include>**/**.java</include>
-							</includes>
-						</source>
-					</sources>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
 	</build>
 </project>

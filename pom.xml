@@ -19,13 +19,6 @@
 		<clirr.comparisonVersion>6.0.2</clirr.comparisonVersion>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>kieker</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>commons-logging</groupId>
@@ -132,22 +125,6 @@
 			<artifactId>selenide</artifactId>
 			<version>4.5.1</version>
 			<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.iobserve</groupId>
-			<artifactId>common</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.iobserve</groupId>
-			<artifactId>monitoring</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>1.8.7</version>
 		</dependency>
 	</dependencies>
 
