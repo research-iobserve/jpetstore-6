@@ -154,7 +154,6 @@
 	<modules>
 		<module>frontend-service</module>
 		<module>account-service</module>
-		<module>usa-account-service</module>
 		<module>catalog-service</module>
 		<module>order-service</module>
 		<module>core-functionality</module>

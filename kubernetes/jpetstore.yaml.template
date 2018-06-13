@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jpetstore
+spec:
+  selector:
+    name: jpetstore
+  ports:
+  - name: jpetstore # Actually, no port is needed.
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: order
+  name: order
+spec:
+  hostname: order
+  subdomain: jpetstore
+  containers:
+  - image: blade1.se.internal:5000/jpetstore-order-service
+    name: order
+    resources: {}
+    env:
+    - name: LOGGER
+      value: %LOGGER%
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: account
+  name: account
+spec:
+  hostname: account
+  subdomain: jpetstore
+  containers:
+  - image: blade1.se.internal:5000/jpetstore-account-service
+    name: account
+    resources: {}
+    env:
+    - name: LOGGER
+      value: %LOGGER%
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: catalog
+  name: catalog
+spec:
+  hostname: catalog
+  subdomain: jpetstore
+  containers:
+  - image: blade1.se.internal:5000/jpetstore-catalog-service
+    name: catalog
+    resources: {}
+    env:
+    - name: LOGGER
+      value: %LOGGER%
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: frontend
+  name: frontend
+spec:
+  hostname: frontend
+  subdomain: jpetstore
+  containers:
+  - image: blade1.se.internal:5000/jpetstore-frontend-service
+    name: frontend
+    resources: {}
+    env:
+    - name: LOGGER
+      value: %LOGGER%
+    - name: JPETSTORE_DOMAIN
+      value: ".jpetstore"
+
