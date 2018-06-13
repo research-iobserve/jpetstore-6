@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_QXdJwAA6EeiMaMdqfMnouQ" entityName="New Allocation">
+  <targetResourceEnvironment_Allocation href="ResourceEnvironment.resourceenvironment#/"/>
+  <system_Allocation href="Assembly.system#_Q1a_gAA3EeiMaMdqfMnouQ"/>
+  <allocationContexts_Allocation id="_xLwtUAA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_AccountDatabase">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_slzBEAA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_eyO4oAA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_xlifQAA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_OrderDatabase">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_slzBEAA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_hL0mMAA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_x2H48AA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_CatalogDatabase">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_slzBEAA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_gXuPwAA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_0_9-wAA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_CatalogService">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_sThlUAA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_dK2EEAA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_1LRP0AA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_AccountService">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_rohggAA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_ciOk4AA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_1p1bIAA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_FrontendService">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_q2Ev4AA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_ZvkQAAA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_13AUcAA6EeiMaMdqfMnouQ" entityName="Allocation_Assembly_OrderService">
+    <resourceContainer_AllocationContext href="ResourceEnvironment.resourceenvironment#_r_sDUAA1EeiMaMdqfMnouQ"/>
+    <assemblyContext_AllocationContext href="Assembly.system#_d_PVcAA3EeiMaMdqfMnouQ"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

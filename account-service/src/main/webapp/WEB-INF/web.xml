@@ -21,15 +21,11 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	<display-name>JPetStore</display-name>
+	<display-name>jpetstore-account-service</display-name>
 	<description>Online Pet Store Sample Application</description>
 	<context-param>
 		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
 		<param-value>StripesResources</param-value>
-	</context-param>
-	<context-param>
-		<param-name>countryCode</param-name>
-		<param-value>276</param-value>
 	</context-param>
 	<context-param>
     	<param-name>contextConfigLocation</param-name>

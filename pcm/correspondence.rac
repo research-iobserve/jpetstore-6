@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<correspondence:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:correspondence="https://www.iobserve-devops.net/model/0.0.3/correspondence">
+  <parts>
+    <modelType href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_Q1a_gAA3EeiMaMdqfMnouQ"/>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Frontend">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_ZvkQAAA3EeiMaMdqfMnouQ"/>
+    </entries>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Account">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_ciOk4AA3EeiMaMdqfMnouQ"/>
+    </entries>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Catalog">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_dK2EEAA3EeiMaMdqfMnouQ"/>
+    </entries>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Order">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_d_PVcAA3EeiMaMdqfMnouQ"/>
+    </entries>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="Database-Account">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_eyO4oAA3EeiMaMdqfMnouQ"/>
+    </entries>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="Database-Catalog">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_gXuPwAA3EeiMaMdqfMnouQ"/>
+    </entries>
+    <entries xsi:type="correspondence:AssemblyEntry" implementationId="Database-Order">
+      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_hL0mMAA3EeiMaMdqfMnouQ"/>
+    </entries>
+  </parts>
+</correspondence:CorrespondenceModel>

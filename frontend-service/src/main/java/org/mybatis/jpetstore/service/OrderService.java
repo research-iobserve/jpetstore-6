@@ -28,54 +28,55 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OrderService extends AbstractService {
-	
-	private static final String ORDER_SERVICE = "http://order:8080/jpetstore-order/";
-	private static final String ORDERS_BY_USERNAME = ORDER_SERVICE + "orders-by-username?username=";
-	private static final String ORDER_BY_ID = ORDER_SERVICE + "order-by-id?orderId=";
-	private static final String INSERT_ORDER = ORDER_SERVICE + "insert-order";
-	private static final String NEXT_ID = ORDER_SERVICE + "nextId?name=";
 
-	/**
-	 * Insert order.
-	 *
-	 * @param order
-	 *            the order
-	 */
-	public void insertOrder(final Order order) {
-		postOperation(INSERT_ORDER, order);
-	}
+    private static final String ORDER_SERVICE = "http://order\" + AbstractService.DOMAIN\n"
+            + "            + \":8080/jpetstore-order/";
+    private static final String ORDERS_BY_USERNAME = OrderService.ORDER_SERVICE + "orders-by-username?username=";
+    private static final String ORDER_BY_ID = OrderService.ORDER_SERVICE + "order-by-id?orderId=";
+    private static final String INSERT_ORDER = OrderService.ORDER_SERVICE + "insert-order";
+    private static final String NEXT_ID = OrderService.ORDER_SERVICE + "nextId?name=";
 
-	/**
-	 * Gets the order.
-	 *
-	 * @param orderId
-	 *            the order id
-	 * @return the order
-	 */
-	public Order getOrder(final int orderId) {
-		return getSingleValue(ORDER_BY_ID + orderId, Order.class);
-	}
+    /**
+     * Insert order.
+     *
+     * @param order
+     *            the order
+     */
+    public void insertOrder(final Order order) {
+        this.postOperation(OrderService.INSERT_ORDER, order);
+    }
 
-	/**
-	 * Gets the orders by username.
-	 *
-	 * @param username
-	 *            the username
-	 * @return the orders by username
-	 */
-	public List<Order> getOrdersByUsername(final String username) {
-		return getMultipleValues(ORDERS_BY_USERNAME + username, Order.class);
-	}
+    /**
+     * Gets the order.
+     *
+     * @param orderId
+     *            the order id
+     * @return the order
+     */
+    public Order getOrder(final int orderId) {
+        return this.getSingleValue(OrderService.ORDER_BY_ID + orderId, Order.class);
+    }
 
-	/**
-	 * Gets the next id.
-	 *
-	 * @param name
-	 *            the name
-	 * @return the next id
-	 */
-	public int getNextId(final String name) {
-		return getSingleValue(NEXT_ID, Integer.class);
-	}
+    /**
+     * Gets the orders by username.
+     *
+     * @param username
+     *            the username
+     * @return the orders by username
+     */
+    public List<Order> getOrdersByUsername(final String username) {
+        return this.getMultipleValues(OrderService.ORDERS_BY_USERNAME + username, Order.class);
+    }
+
+    /**
+     * Gets the next id.
+     *
+     * @param name
+     *            the name
+     * @return the next id
+     */
+    public int getNextId(final String name) {
+        return this.getSingleValue(OrderService.NEXT_ID, Integer.class);
+    }
 
 }

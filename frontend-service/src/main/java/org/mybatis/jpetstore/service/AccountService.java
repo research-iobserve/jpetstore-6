@@ -27,7 +27,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountService extends AbstractService {
 
-    private static final String ACCOUNT_SERVICE = "http://account:8080/jpetstore-account/";
+    private static final String ACCOUNT_SERVICE = "http://account" + AbstractService.DOMAIN
+            + ":8080/jpetstore-account/";
     private static final String REQUEST_USER = AccountService.ACCOUNT_SERVICE + "request-user";
     private static final String INSERT_ACCOUNT_REQUEST = AccountService.ACCOUNT_SERVICE + "insert-account";
     private static final String UPDATE_ACCOUNT_REQUEST = AccountService.ACCOUNT_SERVICE + "update-account";
@@ -53,11 +54,10 @@ public class AccountService extends AbstractService {
      * @return the matching account or null
      */
     public Account getAccount(final String username, final String password) {
-        return this
-                .getSingleValue(AccountService.REQUEST_USER + "?username=" + username + "&password=" + password, Account.class);
+        return this.getSingleValue(AccountService.REQUEST_USER + "?username=" + username + "&password=" + password,
+                Account.class);
     }
 
- 
     /**
      * Insert account.
      *
@@ -65,7 +65,7 @@ public class AccountService extends AbstractService {
      *            the account
      */
     public void insertAccount(final Account account) {
-        LOG.info("insert " + account.toString());
+        AbstractService.LOG.info("insert " + account.toString());
         this.postOperation(AccountService.INSERT_ACCOUNT_REQUEST, account);
     }
 
@@ -76,7 +76,7 @@ public class AccountService extends AbstractService {
      *            the account
      */
     public void updateAccount(final Account account) {
-        LOG.info("update " + account.toString());
+        AbstractService.LOG.info("update " + account.toString());
         this.postOperation(AccountService.UPDATE_ACCOUNT_REQUEST, account);
     }
 
