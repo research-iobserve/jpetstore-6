@@ -13,6 +13,6 @@ if [ "$2" == "" ] ; then
 
 fi
 
-cat jpetstore.yaml.template | sed "s/%LOGGER%/$1/g" | sed "s/%ACCONT-INSTANCES%/$2/g" > jpetstore.yaml
+cat jpetstore.yaml.template | sed "s/%LOGGER%/$1/g" | sed "s/%ACCOUNT-INSTANCES%/$2/g" > jpetstore.yaml
 
 # end
