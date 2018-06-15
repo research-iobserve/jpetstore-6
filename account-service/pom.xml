@@ -35,9 +35,53 @@
 			<artifactId>postgresql</artifactId>
 			<version>9.4-1206-jdbc42</version>
 		</dependency>
+		<dependency>
+			<groupId>net.kieker-monitoring</groupId>
+			<artifactId>kieker</artifactId>
+			<version>1.14-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>jpetstore-account</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.8</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+					<complianceLevel>${java-version}</complianceLevel>
+					<aspectLibraries>
+						<aspectLibrary>
+							<groupId>net.kieker-monitoring</groupId>
+							<artifactId>kieker</artifactId>
+						</aspectLibrary>
+					</aspectLibraries>
+					<xmlConfigured>${basedir}/src/main/resources/aop.xml</xmlConfigured>
+					<sources>
+						<source>
+							<basedir>${basedir}/src/main/java</basedir>
+							<includes>
+								<include>**/**.java</include>
+							</includes>
+						</source>
+					</sources>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

@@ -1,0 +1,39 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.aspectj.org/dtd/aspectj_1_5_0.dtd">
+
+<aspectj>
+	<weaver options=""> <!-- options="-verbose" -->
+
+		<!-- Use the exclude/include directives to specify which classes are (not) 
+			to be considered for weaving. Some examples are given below. -->
+		<include within="org.mybatis..*" />
+	</weaver>
+
+	<aspects>
+		<!-- object -->
+		<aspect
+			name="kieker.monitoring.probe.aspectj.flow.constructorCallObject.FullInstrumentation" />
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.constructorExecutionObject.FullInstrumentation" /> -->
+		<aspect
+			name="kieker.monitoring.probe.aspectj.flow.constructorExecutionObjectInterface.FullInstrumentation" />
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.operationCallObject.FullInstrumentationNoGetterAndSetter" /> -->
+		<aspect
+			name="kieker.monitoring.probe.aspectj.flow.operationExecutionObjectInterface.FullInstrumentationNoGetterAndSetter" />
+		<aspect
+			name="kieker.monitoring.probe.aspectj.flow.operationExecutionObject.FullInstrumentationNoGetterAndSetter" />
+			
+		<!--  static -->
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.constructorCall.FullInstrumentation" /> -->
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.construction.FullInstrumentation" /> -->
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.constructorExecution.FullInstrumentation" /> -->
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.operationCall.FullInstrumentationNoGetterAndSetter" /> -->
+<!-- 		<aspect -->
+<!-- 			name="kieker.monitoring.probe.aspectj.flow.operationExecution.FullInstrumentationNoGetterAndSetter" /> -->
+	</aspects>
+</aspectj>
+
