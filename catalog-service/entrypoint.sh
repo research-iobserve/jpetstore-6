@@ -20,7 +20,14 @@ cat /server.xml.template | sed "s/%HOSTNAME%/$HOSTNAME/g" > $CATALINA_HOME/conf/
 
 catalina.sh start
 
-while true ; do
-        sleep 1
+LOG=/usr/local/tomcat/logs/catalina.out
+
+while [ ! -f $LOG ] ; do
+	echo log
+	sleep 1
 done
+tail -f $LOG
+#while true ; do
+#        sleep 1
+#done
 # end
