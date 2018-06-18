@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <privacy:PrivacyModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:privacy="https://www.iobserve-devops.net/model/0.0.3/privacy">
   <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
-    <resourceContainer href="basic.resourceenvironment#_q2Ev4AA1EeiMaMdqfMnouQ"/>
-  </resourceContainerLocations>
-  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="USA">
-    <resourceContainer href="basic.resourceenvironment#_rohggAA1EeiMaMdqfMnouQ"/>
-  </resourceContainerLocations>
-  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
-    <resourceContainer href="basic.resourceenvironment#_r_sDUAA1EeiMaMdqfMnouQ"/>
-  </resourceContainerLocations>
-  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
-    <resourceContainer href="basic.resourceenvironment#_sThlUAA1EeiMaMdqfMnouQ"/>
-  </resourceContainerLocations>
-  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
-    <resourceContainer href="basic.resourceenvironment#_slzBEAA1EeiMaMdqfMnouQ"/>
+    <resourceContainer href="basic.resourceenvironment#_Oj9IoAA2EeiMaMdqfMnouQ"/>
   </resourceContainerLocations>
   <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="false">
     <component href="jpetstore.repository#_koqHoJk4Eeer_6_V0MXTNA"/>
