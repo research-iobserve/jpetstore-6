@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ASCII"?>
+<privacy:PrivacyModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:privacy="https://www.iobserve-devops.net/model/0.0.3/privacy">
+  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
+    <resourceContainer href="basic.resourceenvironment#_q2Ev4AA1EeiMaMdqfMnouQ"/>
+  </resourceContainerLocations>
+  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="USA">
+    <resourceContainer href="basic.resourceenvironment#_rohggAA1EeiMaMdqfMnouQ"/>
+  </resourceContainerLocations>
+  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
+    <resourceContainer href="basic.resourceenvironment#_r_sDUAA1EeiMaMdqfMnouQ"/>
+  </resourceContainerLocations>
+  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
+    <resourceContainer href="basic.resourceenvironment#_sThlUAA1EeiMaMdqfMnouQ"/>
+  </resourceContainerLocations>
+  <resourceContainerLocations xsi:type="privacy:GeoLocation" isocode="GERMANY">
+    <resourceContainer href="basic.resourceenvironment#_slzBEAA1EeiMaMdqfMnouQ"/>
+  </resourceContainerLocations>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="false">
+    <component href="jpetstore.repository#_koqHoJk4Eeer_6_V0MXTNA"/>
+  </encapsulatedDataSources>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="false">
+    <component href="jpetstore.repository#_ZpyJ0Jk5Eeer_6_V0MXTNA"/>
+  </encapsulatedDataSources>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="false">
+    <component href="jpetstore.repository#_b7wzgJk5Eeer_6_V0MXTNA"/>
+  </encapsulatedDataSources>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="false">
+    <component href="jpetstore.repository#_lsiKAJk5Eeer_6_V0MXTNA"/>
+  </encapsulatedDataSources>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="true">
+    <component href="jpetstore.repository#_66nsENqaEeeIEPEbplhj7g"/>
+  </encapsulatedDataSources>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="true">
+    <component href="jpetstore.repository#_vuR_adquEeeIEPEbplhj7g"/>
+  </encapsulatedDataSources>
+  <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="true">
+    <component href="jpetstore.repository#_67vydquEeeIEPEbplhj7g"/>
+  </encapsulatedDataSources>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.1/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+    <operationSignature href="jpetstore.repository#_48h2MJlIEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.2/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.2/@parameters__OperationSignature.1"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_vBvEMJlMEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_5ZneAJlMEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.1/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_X9jsAJlOEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.2/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_3ULwoJlOEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.3/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_tz-JMJlPEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.4/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_7r00YJlQEeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.5/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_XKVX8JlREeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.6/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_hH-FwJlREeer_6_V0MXTNA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.7/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_qa5fEJoUEeelXf12NKUrpA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.1/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+    <operationSignature href="jpetstore.repository#__7-a4JoUEeelXf12NKUrpA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.2/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+    <operationSignature href="jpetstore.repository#_HG_aoJoWEeelXf12NKUrpA"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.3/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+    <operationSignature href="jpetstore.repository#_ggIwUNqlEeeIEPEbplhj7g"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.3/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
+    <operationSignature href="jpetstore.repository#_gZ85sNquEeeIEPEbplhj7g"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.4/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+    <operationSignature href="jpetstore.repository#_qL-NYNquEeeIEPEbplhj7g"/>
+  </privacyLevels>
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+    <parameter href="jpetstore.repository#//@interfaces__Repository.5/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+  </privacyLevels>
+</privacy:PrivacyModel>

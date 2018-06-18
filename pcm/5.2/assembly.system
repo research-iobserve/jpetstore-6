@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" id="_Q1a_gAA3EeiMaMdqfMnouQ" entityName="Distributed JPetStore">
+  <assemblyContexts__ComposedStructure id="_ZvkQAAA3EeiMaMdqfMnouQ" entityName="Assembly_FrontendService">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_koqHoJk4Eeer_6_V0MXTNA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_ciOk4AA3EeiMaMdqfMnouQ" entityName="Assembly_AccountService">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_ZpyJ0Jk5Eeer_6_V0MXTNA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_dK2EEAA3EeiMaMdqfMnouQ" entityName="Assembly_CatalogService">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_b7wzgJk5Eeer_6_V0MXTNA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_d_PVcAA3EeiMaMdqfMnouQ" entityName="Assembly_OrderService">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_lsiKAJk5Eeer_6_V0MXTNA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_eyO4oAA3EeiMaMdqfMnouQ" entityName="Assembly_AccountDatabase">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_66nsENqaEeeIEPEbplhj7g"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_gXuPwAA3EeiMaMdqfMnouQ" entityName="Assembly_CatalogDatabase">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_vuR_adquEeeIEPEbplhj7g"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_hL0mMAA3EeiMaMdqfMnouQ" entityName="Assembly_OrderDatabase">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="jpetstore.repository#_-67vydquEeeIEPEbplhj7g"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_KO6JEAA4EeiMaMdqfMnouQ" entityName="catalogFrontendConnector" requiringAssemblyContext_AssemblyConnector="_ZvkQAAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_dK2EEAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_yTWzsZlREeer_6_V0MXTNA"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_KXkIpZoYEeelXf12NKUrpA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_MASnIAA4EeiMaMdqfMnouQ" entityName="accountFrontendConnector" requiringAssemblyContext_AssemblyConnector="_ZvkQAAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_ciOk4AA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_5qAN8ZlNEeer_6_V0MXTNA"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_DET9dZoYEeelXf12NKUrpA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_NFIvUAA4EeiMaMdqfMnouQ" entityName="orderFrontendConnector" requiringAssemblyContext_AssemblyConnector="_ZvkQAAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_d_PVcAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_t4CCYZoWEeelXf12NKUrpA"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_JfjilZoYEeelXf12NKUrpA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_POY60AA4EeiMaMdqfMnouQ" entityName="accountDatabaseAccountConnector" requiringAssemblyContext_AssemblyConnector="_ciOk4AA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_eyO4oAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_Q9V8YdqbEeeIEPEbplhj7g"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_OfIS5dquEeeIEPEbplhj7g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_Rb4GEAA4EeiMaMdqfMnouQ" entityName="catalogDatabaseCatalogConnector" requiringAssemblyContext_AssemblyConnector="_dK2EEAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_gXuPwAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_zDJpcdquEeeIEPEbplhj7g"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_THuZNdqvEeeIEPEbplhj7g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_SK7kcAA4EeiMaMdqfMnouQ" entityName="orderDatabaseCatalogConnector" requiringAssemblyContext_AssemblyConnector="_dK2EEAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_hL0mMAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_Bq2SodqvEeeIEPEbplhj7g"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_MUkqZdqvEeeIEPEbplhj7g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_TARRAAA4EeiMaMdqfMnouQ" entityName="catalogDatabaseOrderConnector" requiringAssemblyContext_AssemblyConnector="_d_PVcAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_gXuPwAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_zDJpcdquEeeIEPEbplhj7g"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_d9GnVdqvEeeIEPEbplhj7g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_XbuIoAA4EeiMaMdqfMnouQ" entityName="orderDatabaseOrderConnector" requiringAssemblyContext_AssemblyConnector="_d_PVcAA3EeiMaMdqfMnouQ" providingAssemblyContext_AssemblyConnector="_hL0mMAA3EeiMaMdqfMnouQ">
+    <providedRole_AssemblyConnector href="jpetstore.repository#_Bq2SodqvEeeIEPEbplhj7g"/>
+    <requiredRole_AssemblyConnector href="jpetstore.repository#_baYy8tqvEeeIEPEbplhj7g"/>
+  </connectors__ComposedStructure>
+</system:System>
