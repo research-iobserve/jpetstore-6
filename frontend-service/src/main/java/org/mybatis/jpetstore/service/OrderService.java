@@ -25,12 +25,12 @@ import org.springframework.stereotype.Service;
  * The Class OrderService.
  *
  * @author Eduardo Macarron
+ * @author Reiner Jung -- adapted for distributed JPetStore
  */
 @Service
 public class OrderService extends AbstractService {
 
-    private static final String ORDER_SERVICE = "http://order\" + AbstractService.DOMAIN\n"
-            + "            + \":8080/jpetstore-order/";
+    private static final String ORDER_SERVICE = "http://order" + AbstractService.getDomain() + ":8080/jpetstore-order/";
     private static final String ORDERS_BY_USERNAME = OrderService.ORDER_SERVICE + "orders-by-username?username=";
     private static final String ORDER_BY_ID = OrderService.ORDER_SERVICE + "order-by-id?orderId=";
     private static final String INSERT_ORDER = OrderService.ORDER_SERVICE + "insert-order";
