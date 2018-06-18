@@ -6,7 +6,7 @@ function terminate() {
 
 trap terminate SIGINT SIGTERM EXIT
 
-echo $HOSTNAME
+echo "frontend host $HOSTNAME"
 
 if [ "$LOGGER" == "" ] ; then
 	LOGGER="172.17.0.1"
