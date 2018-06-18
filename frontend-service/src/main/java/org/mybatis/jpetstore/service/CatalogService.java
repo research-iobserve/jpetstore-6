@@ -27,12 +27,12 @@ import org.springframework.stereotype.Service;
  * The Class CatalogService.
  *
  * @author Eduardo Macarron
+ * @author Reiner Jung -- adapted for distributed JPetStore
  */
 @Service
 public class CatalogService extends AbstractService {
 
-    private static final String CATALOG_SERVICE = "http://catalog\" + AbstractService.DOMAIN\n"
-            + "            + \":8080/jpetstore-catalog/";
+    private static final String CATALOG_SERVICE = "http://catalog" + AbstractService.getDomain() + ":8080/jpetstore-catalog/";
 
     private static final String GET_CATEGORY = "category?categoryId=";
 

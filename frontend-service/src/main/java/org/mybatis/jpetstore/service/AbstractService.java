@@ -18,9 +18,15 @@ import org.apache.log4j.Logger;
 
 public abstract class AbstractService {
 
-    protected final static String DOMAIN = System.getenv("JPETSTORE_DOMAIN");
-
     protected final static Logger LOG = Logger.getLogger(CatalogService.class);
+    
+    protected final static String getDomain() {
+    	String domain = System.getenv("JPETSTORE_DOMAIN");
+    	if (domain == null)
+    		return "";
+    	else
+    		return domain;
+    }
 
     /**
      * Request a single object from remote.
