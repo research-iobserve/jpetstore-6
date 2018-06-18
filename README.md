@@ -8,6 +8,19 @@ account management, the catalog and the order operations.
 Before we discuss any details, we want to thank the MyBatis team for providing
 the JPetStore.
 
+## How to use this repository
+
+We have different branches for different variants of the JPetStore supporting different
+observation setups and architectures.
+- `single-jpetstore` single war file + docker image setup
+- `single-jpetstore-kieker-monitoring` same as above with instrumentation for kieker
+- `single-jpetstore-iobserve-monitoring` same as above with instrumentation for iobserve
+- `distributed-jpetstore` single war file + docker image setup
+- `distributed-jpetstore-kieker-monitoring` same as above with instrumentation for kieker
+- `distributed-jpetstore-iobserve-monitoring` same as above with instrumentation for iobserve
+
+All branches provide a Dockerfile and Kubernetes yamls.
+
 ## Requirements
 
 - Java 7 or higher
