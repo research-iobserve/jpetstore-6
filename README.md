@@ -21,6 +21,8 @@ observation setups and architectures.
 
 All branches provide a Dockerfile and Kubernetes yamls.
 
+Please note: This branch is no longer synchronized with any of the six branches.
+
 ## Requirements
 
 - Java 7 or higher
