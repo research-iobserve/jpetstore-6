@@ -29,10 +29,17 @@ want to ensure to start from a clean environment.
 
 ## Execution
 
-After compilation and packaging you can deploy all packages in you own tomcat. However,
-we also provide a `Dockerfile`. You can run either run `docker build` yourself or use
-the `create-docker-images.sh` script to generate a docker image. In case you used the
-`create-docker-images.sh` script, the image is named `single-jpetstore`.
+After compilation and packaging you can deploy all packages in you own tomcat or other
+servlet environment. 
+
+Additionally, we provide a `Dockerfile`. You can run either run `docker build` yourself
+or use the `create-docker-images.sh` script to generate a docker image. In case you used
+the `create-docker-images.sh` script, the image is named `single-jpetstore`.
+
+### Docker
+
+Starting the docker container can then be performed with:
+`docker run single-jpetstore`
 
 
 
