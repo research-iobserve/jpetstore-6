@@ -16,8 +16,12 @@
 	<version>6.0.3-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>JPetStore Demo 6</name>
-	<url>http://www.mybatis.org</url>
+	<name>iObserve - JPetStore 6</name>
+	<url>https://www.iobserve-devops.net</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<scm>
 		<url>http://github.com/mybatis/jpetstore-6</url>
