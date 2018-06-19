@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -15,19 +16,16 @@
  */
 package org.mybatis.jpetstore.mapper;
 
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.LineItem;
+import org.mybatis.jpetstore.domain.Sequence;
 
 /**
- * The Interface LineItemMapper.
+ * The Interface SequenceMapper.
  *
  * @author Eduardo Macarron
  */
-public interface LineItemMapper {
+public interface ISequenceMapper {
 
-  List<LineItem> getLineItemsByOrderId(int orderId);
+    Sequence getSequence(Sequence sequence);
 
-  void insertLineItem(LineItem lineItem);
-
+    void updateSequence(Sequence sequence);
 }

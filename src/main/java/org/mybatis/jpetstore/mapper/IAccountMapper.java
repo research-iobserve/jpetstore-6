@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -15,21 +16,29 @@
  */
 package org.mybatis.jpetstore.mapper;
 
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.Product;
+import org.mybatis.jpetstore.domain.Account;
 
 /**
- * The Interface ProductMapper.
+ * The Interface AccountMapper.
  *
  * @author Eduardo Macarron
  */
-public interface ProductMapper {
+public interface IAccountMapper {
 
-  List<Product> getProductListByCategory(String categoryId);
+    Account getAccountByUsername(String username);
 
-  Product getProduct(String productId);
+    Account getAccountByUsernameAndPassword(String username, String password);
 
-  List<Product> searchProductList(String keywords);
+    void insertAccount(Account account);
+
+    void insertProfile(Account account);
+
+    void insertSignon(Account account);
+
+    void updateAccount(Account account);
+
+    void updateProfile(Account account);
+
+    void updateSignon(Account account);
 
 }

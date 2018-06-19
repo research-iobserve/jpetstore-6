@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -17,17 +18,17 @@ package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
 
-import org.mybatis.jpetstore.domain.Category;
+import org.mybatis.jpetstore.domain.LineItem;
 
 /**
- * The Interface CategoryMapper.
+ * The Interface LineItemMapper.
  *
  * @author Eduardo Macarron
  */
-public interface CategoryMapper {
+public interface ILineItemMapper {
 
-  List<Category> getCategoryList();
+    List<LineItem> getLineItemsByOrderId(int orderId);
 
-  Category getCategory(String categoryId);
+    void insertLineItem(LineItem lineItem);
 
 }
