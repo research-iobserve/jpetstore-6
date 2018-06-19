@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker build -t jpetstore-single .
+docker build -t single-jpetstore .
 
 # end
