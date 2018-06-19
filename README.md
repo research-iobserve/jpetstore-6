@@ -36,11 +36,16 @@ Additionally, we provide a `Dockerfile`. You can run either run `docker build` y
 or use the `create-docker-images.sh` script to generate a docker image. In case you used
 the `create-docker-images.sh` script, the image is named `single-jpetstore`.
 
+Before deploying the JPetStore or starting the docker image, you need to have a log
+collector to receive all monitoring data. Such collector can be found in the iObserve
+project. You also need to know the IP address of the host where the collector is running
+on. We store that IP address in the LOGGER environment variable.
+
+Futher detail can be found in 
+https://github.com/research-iobserve/single-jpetstore-clustering-experiment
+
 ### Docker
 
 Starting the docker container can then be performed with:
-`docker run single-jpetstore`
-
-
-
+`docker run -e LOGGER=$LOGGER single-jpetstore`
 
