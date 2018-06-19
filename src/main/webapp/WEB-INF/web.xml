@@ -64,7 +64,7 @@
 	<!-- Begin: Integration of Kieker's SessionAndTraceRegistrationFilter -->
 	<filter>
 		<filter-name>sessionAndTraceRegistrationFilter</filter-name>
-		<filter-class>org.iobserve.monitoring.probe.servlet.SessionAndTraceRegistrationPayloadFilter</filter-class>
+		<filter-class>kieker.monitoring.probe.servlet.SessionAndTraceRegistrationFilter</filter-class>
 		<init-param>
 			<param-name>logFilterExecution</param-name>
 			<param-value>true</param-value>
@@ -74,9 +74,5 @@
 		<filter-name>sessionAndTraceRegistrationFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 	<!-- End: Integration of Kieker's SessionAndTraceRegistrationFilter -->
-	<listener>
-		<listener-class>org.iobserve.monitoring.probe.servlet.DeploymentContextListener</listener-class>
-	</listener>
 </web-app>
