@@ -14,6 +14,8 @@ the JPetStore.
 - git
 - Maven 
 - docker (optional)
+- compiled and installed iObserve code base, which can be found here
+  https://github.com/research-iobserve/iobserve-analysis
 
 ## Preparation
 
