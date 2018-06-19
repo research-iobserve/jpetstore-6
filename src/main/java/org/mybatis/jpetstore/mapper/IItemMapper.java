@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -15,16 +16,24 @@
  */
 package org.mybatis.jpetstore.mapper;
 
-import org.mybatis.jpetstore.domain.Sequence;
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.jpetstore.domain.Item;
 
 /**
- * The Interface SequenceMapper.
+ * The Interface ItemMapper.
  *
  * @author Eduardo Macarron
  */
-public interface SequenceMapper {
+public interface IItemMapper {
 
-  Sequence getSequence(Sequence sequence);
+    void updateInventoryQuantity(Map<String, Object> param);
 
-  void updateSequence(Sequence sequence);
+    int getInventoryQuantity(String itemId);
+
+    List<Item> getItemListByProduct(String productId);
+
+    Item getItem(String itemId);
+
 }

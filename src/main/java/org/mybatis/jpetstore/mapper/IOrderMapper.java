@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -24,14 +25,14 @@ import org.mybatis.jpetstore.domain.Order;
  *
  * @author Eduardo Macarron
  */
-public interface OrderMapper {
+public interface IOrderMapper {
 
-  List<Order> getOrdersByUsername(String username);
+    List<Order> getOrdersByUsername(String username);
 
-  Order getOrder(int orderId);
+    Order getOrder(int orderId);
 
-  void insertOrder(Order order);
+    void insertOrder(Order order);
 
-  void insertOrderStatus(Order order);
+    void insertOrderStatus(Order order);
 
 }

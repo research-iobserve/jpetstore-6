@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -15,16 +16,15 @@
  */
 package org.mybatis.jpetstore.service;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.ArgumentMatchers.eq;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mybatis.jpetstore.domain.Account;
-import org.mybatis.jpetstore.mapper.AccountMapper;
+import org.mybatis.jpetstore.mapper.IAccountMapper;
 
 /**
  * @author Eduardo Macarron
@@ -33,24 +33,24 @@ import org.mybatis.jpetstore.mapper.AccountMapper;
 @RunWith(MockitoJUnitRunner.class)
 public class AccountServiceTest {
 
-  @Mock
-  private AccountMapper accountMapper;
+    @Mock
+    private IAccountMapper accountMapper;
 
-  @InjectMocks
-  private AccountService accountService;
+    @InjectMocks
+    private AccountService accountService;
 
-  @Test
-  public void shouldCallTheMapperToInsertAnAccount() {
-    //given
-    Account account = new Account();
+    @Test
+    public void shouldCallTheMapperToInsertAnAccount() {
+        // given
+        final Account account = new Account();
 
-    //when
-    accountService.insertAccount(account);
+        // when
+        accountService.insertAccount(account);
 
-    //then
-    verify(accountMapper).insertAccount(eq(account));
-    verify(accountMapper).insertProfile(eq(account));
-    verify(accountMapper).insertSignon(eq(account));
-  }
+        // then
+        Mockito.verify(accountMapper).insertAccount(ArgumentMatchers.eq(account));
+        Mockito.verify(accountMapper).insertProfile(ArgumentMatchers.eq(account));
+        Mockito.verify(accountMapper).insertSignon(ArgumentMatchers.eq(account));
+    }
 
 }

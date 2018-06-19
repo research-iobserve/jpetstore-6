@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2010-2016 the original author or authors.
+       Copyright (C) 2010-2017 the original author or authors.
+                     2017 iObserve Project (https://www.iobserve-devops.net)
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -16,28 +17,7 @@
        limitations under the License.
 
 -->
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="org.mybatis.jpetstore.mapper.ICategoryMapper">
-
-  <cache />
-  
-  <select id="getCategory" resultType="Category">
-    SELECT
-      CATID AS categoryId,
-      NAME,
-      DESCN AS description
-    FROM CATEGORY
-    WHERE CATID = #{categoryId}
-  </select>
-
-  <select id="getCategoryList" resultType="Category">
-    SELECT
-      CATID AS categoryId,
-      NAME,
-      DESCN AS description
-    FROM CATEGORY
-  </select>
-
-</mapper>
+<!DOCTYPE Format>
+<Format>
+ <!-- Dummy format file -->
+</Format>

@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -15,23 +16,23 @@
  */
 package org.mybatis.jpetstore;
 
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.junit.ScreenShooter;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.*;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.*;
-import static org.assertj.core.api.Assertions.*;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.junit.ScreenShooter;
 
 /**
  * Integration tests for screen transition.
@@ -40,240 +41,244 @@ import static org.assertj.core.api.Assertions.*;
  */
 public class ScreenTransitionIT {
 
-  @Rule
-  public ScreenShooter screenShooter = ScreenShooter.failedTests();
+    @Rule
+    public ScreenShooter screenShooter = ScreenShooter.failedTests();
 
-  @BeforeClass
-  public static void setupSelenide() {
-    browser = HTMLUNIT;
-    timeout = TimeUnit.SECONDS.toMillis(10);
-    baseUrl = "http://localhost:8080/jpetstore";
-  }
-
-  @After
-  public void logout() {
-    SelenideElement element = $(By.linkText("Sign Out"));
-    if (element.exists()) {
-      element.click();
+    @BeforeClass
+    public static void setupSelenide() {
+        Configuration.browser = WebDriverRunner.HTMLUNIT;
+        Configuration.timeout = TimeUnit.SECONDS.toMillis(10);
+        Configuration.baseUrl = "http://localhost:8080/jpetstore";
     }
-  }
 
-  @Test
-  public void testOrder() {
-
-    // Open the home page
-    open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Move to the top page
-    $(By.linkText("Enter the Store")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to sign in page & sign
-    $(By.linkText("Sign In")).click();
-    $(By.name("username")).setValue("j2ee");
-    $(By.name("password")).setValue("j2ee");
-    $(By.name("signon")).click();
-    $(By.id("WelcomeContent")).shouldBe(text("Welcome ABC!"));
-
-    // Search items
-    $(By.name("keyword")).setValue("fish");
-    $(By.name("searchProducts")).click();
-    $$(By.cssSelector("#Catalog table tr")).shouldHaveSize(4);
-
-    // Select item
-    $(By.linkText("Fresh Water fish from China")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Goldfish"));
-
-    // Add a item to the cart
-    $(By.linkText("Add to Cart")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Shopping Cart"));
-
-    // Checkout cart items
-    $(By.linkText("Proceed to Checkout")).click();
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Confirm order information
-    $(By.name("newOrder")).click();
-    $(By.cssSelector("#Catalog")).shouldBe(text("Please confirm the information below and then press continue..."));
-
-    // Submit order
-    $(By.linkText("Confirm")).click();
-    $(By.cssSelector(".messages li")).shouldBe(text("Thank you, your order has been submitted."));
-    String orderId = extractOrderId($(By.cssSelector("#Catalog table tr")).text());
-
-    // Show profile page
-    $(By.linkText("My Account")).click();
-    $(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
-
-    // Show orders
-    $(By.linkText("My Orders")).click();
-    $(By.cssSelector("#Content h2")).shouldBe(text("My Orders"));
-
-    // Show order detail
-    $(By.linkText(orderId)).click();
-    assertThat(extractOrderId($(By.cssSelector("#Catalog table tr")).text())).isEqualTo(orderId);
-
-    // Sign out
-    $(By.linkText("Sign Out")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-  }
-
-  @Test
-  public void testUpdateProfile() {
-    // Open the home page
-    open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Move to the top page
-    $(By.linkText("Enter the Store")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to sign in page & sign
-    $(By.linkText("Sign In")).click();
-    $(By.name("username")).setValue("j2ee");
-    $(By.name("password")).setValue("j2ee");
-    $(By.name("signon")).click();
-    $(By.id("WelcomeContent")).shouldBe(text("Welcome ABC!"));
-
-    // Show profile page
-    $(By.linkText("My Account")).click();
-    $(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
-    $$(By.cssSelector("#Catalog table td")).get(1).shouldBe(text("j2ee"));
-
-    // Edit account
-    $(By.name("editAccount")).click();
-    $(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
-    $$(By.cssSelector("#Catalog table td")).get(1).shouldBe(text("j2ee"));
-  }
-
-  @Test
-  public void testRegistrationUser() {
-    // Open the home page
-    open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Move to the top page
-    $(By.linkText("Enter the Store")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to sign in page & sign
-    $(By.linkText("Sign In")).click();
-    $(By.cssSelector("#Catalog p")).shouldBe(text("Please enter your username and password."));
-
-    // Move to use registration page
-    $(By.linkText("Register Now!")).click();
-    $(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
-
-    // Create a new user
-    String userId = String.valueOf(System.currentTimeMillis());
-    $(By.name("username")).setValue(userId);
-    $(By.name("password")).setValue("password");
-    $(By.name("repeatedPassword")).setValue("password");
-    $(By.name("account.firstName")).setValue("Jon");
-    $(By.name("account.lastName")).setValue("MyBatis");
-    $(By.name("account.email")).setValue("jon.mybatis@test.com");
-    $(By.name("account.phone")).setValue("09012345678");
-    $(By.name("account.address1")).setValue("Address1");
-    $(By.name("account.address2")).setValue("Address2");
-    $(By.name("account.city")).setValue("Minato-Ku");
-    $(By.name("account.state")).setValue("Tokyo");
-    $(By.name("account.zip")).setValue("0001234");
-    $(By.name("account.country")).setValue("Japan");
-    $(By.name("account.languagePreference")).selectOption("japanese");
-    $(By.name("account.favouriteCategoryId")).selectOption("CATS");
-    $(By.name("account.listOption")).setSelected(true);
-    $(By.name("account.bannerOption")).setSelected(true);
-    $(By.name("newAccount")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to sign in page & sign
-    $(By.linkText("Sign In")).click();
-    $(By.name("username")).setValue(userId);
-    $(By.name("password")).setValue("password");
-    $(By.name("signon")).click();
-    $(By.id("WelcomeContent")).shouldBe(text("Welcome Jon!"));
-
-  }
-
-  @Test
-  public void testSelectItems() {
-    // Open the home page
-    open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Move to the top page
-    $(By.linkText("Enter the Store")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to category
-    $(By.cssSelector("#SidebarContent a")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
-
-    // Move to items
-    $(By.linkText("FI-SW-01")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Angelfish"));
-
-    // Move to item detail
-    $(By.linkText("EST-1")).click();
-    $$(By.cssSelector("#Catalog table tr td")).get(2).shouldBe(text("Large Angelfish"));
-
-    // Back to items
-    $(By.linkText("Return to FI-SW-01")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Angelfish"));
-
-    // Back to category
-    $(By.linkText("Return to FISH")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
-
-    // Back to the top page
-    $(By.linkText("Return to Main Menu")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-  }
-
-  @Test
-  public void testViewCart() {
-
-    // Open the home page
-    open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Move to the top page
-    $(By.linkText("Enter the Store")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to cart
-    $(By.name("img_cart")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Shopping Cart"));
-
-  }
-
-  @Test
-  public void testViewHelp() {
-
-    // Open the home page
-    open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-
-    // Move to the top page
-    $(By.linkText("Enter the Store")).click();
-    $(By.id("WelcomeContent")).shouldBe(text(""));
-
-    // Move to help
-    $(By.linkText("?")).click();
-    $(By.cssSelector("#Content h1")).shouldBe(text("JPetStore Demo"));
-
-  }
-
-  private static String extractOrderId(String target) {
-    Matcher matcher = Pattern.compile("Order #(\\d{4}) .*").matcher(target);
-    String orderId = "";
-    if (matcher.find()) {
-      orderId = matcher.group(1);
+    @After
+    public void logout() {
+        final SelenideElement element = Selenide.$(By.linkText("Sign Out"));
+        if (element.exists()) {
+            element.click();
+        }
     }
-    return orderId;
-  }
+
+    @Test
+    public void testOrder() {
+
+        // Open the home page
+        Selenide.open("/");
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Move to the top page
+        Selenide.$(By.linkText("Enter the Store")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to sign in page & sign
+        Selenide.$(By.linkText("Sign In")).click();
+        Selenide.$(By.name("username")).setValue("j2ee");
+        Selenide.$(By.name("password")).setValue("j2ee");
+        Selenide.$(By.name("signon")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text("Welcome ABC!"));
+
+        // Search items
+        Selenide.$(By.name("keyword")).setValue("fish");
+        Selenide.$(By.name("searchProducts")).click();
+        Selenide.$$(By.cssSelector("#Catalog table tr")).shouldHaveSize(4);
+
+        // Select item
+        Selenide.$(By.linkText("Fresh Water fish from China")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Goldfish"));
+
+        // Add a item to the cart
+        Selenide.$(By.linkText("Add to Cart")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Shopping Cart"));
+
+        // Checkout cart items
+        Selenide.$(By.linkText("Proceed to Checkout")).click();
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Confirm order information
+        Selenide.$(By.name("newOrder")).click();
+        Selenide.$(By.cssSelector("#Catalog"))
+                .shouldBe(Condition.text("Please confirm the information below and then press continue..."));
+
+        // Submit order
+        Selenide.$(By.linkText("Confirm")).click();
+        Selenide.$(By.cssSelector(".messages li"))
+                .shouldBe(Condition.text("Thank you, your order has been submitted."));
+        final String orderId = ScreenTransitionIT
+                .extractOrderId(Selenide.$(By.cssSelector("#Catalog table tr")).text());
+
+        // Show profile page
+        Selenide.$(By.linkText("My Account")).click();
+        Selenide.$(By.cssSelector("#Catalog h3")).shouldBe(Condition.text("User Information"));
+
+        // Show orders
+        Selenide.$(By.linkText("My Orders")).click();
+        Selenide.$(By.cssSelector("#Content h2")).shouldBe(Condition.text("My Orders"));
+
+        // Show order detail
+        Selenide.$(By.linkText(orderId)).click();
+        Assertions.assertThat(ScreenTransitionIT.extractOrderId(Selenide.$(By.cssSelector("#Catalog table tr")).text()))
+                .isEqualTo(orderId);
+
+        // Sign out
+        Selenide.$(By.linkText("Sign Out")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+    }
+
+    @Test
+    public void testUpdateProfile() {
+        // Open the home page
+        Selenide.open("/");
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Move to the top page
+        Selenide.$(By.linkText("Enter the Store")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to sign in page & sign
+        Selenide.$(By.linkText("Sign In")).click();
+        Selenide.$(By.name("username")).setValue("j2ee");
+        Selenide.$(By.name("password")).setValue("j2ee");
+        Selenide.$(By.name("signon")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text("Welcome ABC!"));
+
+        // Show profile page
+        Selenide.$(By.linkText("My Account")).click();
+        Selenide.$(By.cssSelector("#Catalog h3")).shouldBe(Condition.text("User Information"));
+        Selenide.$$(By.cssSelector("#Catalog table td")).get(1).shouldBe(Condition.text("j2ee"));
+
+        // Edit account
+        Selenide.$(By.name("editAccount")).click();
+        Selenide.$(By.cssSelector("#Catalog h3")).shouldBe(Condition.text("User Information"));
+        Selenide.$$(By.cssSelector("#Catalog table td")).get(1).shouldBe(Condition.text("j2ee"));
+    }
+
+    @Test
+    public void testRegistrationUser() {
+        // Open the home page
+        Selenide.open("/");
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Move to the top page
+        Selenide.$(By.linkText("Enter the Store")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to sign in page & sign
+        Selenide.$(By.linkText("Sign In")).click();
+        Selenide.$(By.cssSelector("#Catalog p")).shouldBe(Condition.text("Please enter your username and password."));
+
+        // Move to use registration page
+        Selenide.$(By.linkText("Register Now!")).click();
+        Selenide.$(By.cssSelector("#Catalog h3")).shouldBe(Condition.text("User Information"));
+
+        // Create a new user
+        final String userId = String.valueOf(System.currentTimeMillis());
+        Selenide.$(By.name("username")).setValue(userId);
+        Selenide.$(By.name("password")).setValue("password");
+        Selenide.$(By.name("repeatedPassword")).setValue("password");
+        Selenide.$(By.name("account.firstName")).setValue("Jon");
+        Selenide.$(By.name("account.lastName")).setValue("MyBatis");
+        Selenide.$(By.name("account.email")).setValue("jon.mybatis@test.com");
+        Selenide.$(By.name("account.phone")).setValue("09012345678");
+        Selenide.$(By.name("account.address1")).setValue("Address1");
+        Selenide.$(By.name("account.address2")).setValue("Address2");
+        Selenide.$(By.name("account.city")).setValue("Minato-Ku");
+        Selenide.$(By.name("account.state")).setValue("Tokyo");
+        Selenide.$(By.name("account.zip")).setValue("0001234");
+        Selenide.$(By.name("account.country")).setValue("Japan");
+        Selenide.$(By.name("account.languagePreference")).selectOption("japanese");
+        Selenide.$(By.name("account.favouriteCategoryId")).selectOption("CATS");
+        Selenide.$(By.name("account.listOption")).setSelected(true);
+        Selenide.$(By.name("account.bannerOption")).setSelected(true);
+        Selenide.$(By.name("newAccount")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to sign in page & sign
+        Selenide.$(By.linkText("Sign In")).click();
+        Selenide.$(By.name("username")).setValue(userId);
+        Selenide.$(By.name("password")).setValue("password");
+        Selenide.$(By.name("signon")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text("Welcome Jon!"));
+
+    }
+
+    @Test
+    public void testSelectItems() {
+        // Open the home page
+        Selenide.open("/");
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Move to the top page
+        Selenide.$(By.linkText("Enter the Store")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to category
+        Selenide.$(By.cssSelector("#SidebarContent a")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Fish"));
+
+        // Move to items
+        Selenide.$(By.linkText("FI-SW-01")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Angelfish"));
+
+        // Move to item detail
+        Selenide.$(By.linkText("EST-1")).click();
+        Selenide.$$(By.cssSelector("#Catalog table tr td")).get(2).shouldBe(Condition.text("Large Angelfish"));
+
+        // Back to items
+        Selenide.$(By.linkText("Return to FI-SW-01")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Angelfish"));
+
+        // Back to category
+        Selenide.$(By.linkText("Return to FISH")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Fish"));
+
+        // Back to the top page
+        Selenide.$(By.linkText("Return to Main Menu")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+    }
+
+    @Test
+    public void testViewCart() {
+
+        // Open the home page
+        Selenide.open("/");
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Move to the top page
+        Selenide.$(By.linkText("Enter the Store")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to cart
+        Selenide.$(By.name("img_cart")).click();
+        Selenide.$(By.cssSelector("#Catalog h2")).shouldBe(Condition.text("Shopping Cart"));
+
+    }
+
+    @Test
+    public void testViewHelp() {
+
+        // Open the home page
+        Selenide.open("/");
+        Assertions.assertThat(Selenide.title()).isEqualTo("JPetStore Demo");
+
+        // Move to the top page
+        Selenide.$(By.linkText("Enter the Store")).click();
+        Selenide.$(By.id("WelcomeContent")).shouldBe(Condition.text(""));
+
+        // Move to help
+        Selenide.$(By.linkText("?")).click();
+        Selenide.$(By.cssSelector("#Content h1")).shouldBe(Condition.text("JPetStore Demo"));
+
+    }
+
+    private static String extractOrderId(final String target) {
+        final Matcher matcher = Pattern.compile("Order #(\\d{4}) .*").matcher(target);
+        String orderId = "";
+        if (matcher.find()) {
+            orderId = matcher.group(1);
+        }
+        return orderId;
+    }
 
 }

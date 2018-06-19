@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -21,9 +22,9 @@ import java.util.List;
 import org.mybatis.jpetstore.domain.Category;
 import org.mybatis.jpetstore.domain.Item;
 import org.mybatis.jpetstore.domain.Product;
-import org.mybatis.jpetstore.mapper.CategoryMapper;
-import org.mybatis.jpetstore.mapper.ItemMapper;
-import org.mybatis.jpetstore.mapper.ProductMapper;
+import org.mybatis.jpetstore.mapper.ICategoryMapper;
+import org.mybatis.jpetstore.mapper.IItemMapper;
+import org.mybatis.jpetstore.mapper.IProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,52 +36,53 @@ import org.springframework.stereotype.Service;
 @Service
 public class CatalogService {
 
-  @Autowired
-  private CategoryMapper categoryMapper;
-  @Autowired
-  private ItemMapper itemMapper;
-  @Autowired
-  private ProductMapper productMapper;
+    @Autowired
+    private ICategoryMapper categoryMapper;
+    @Autowired
+    private IItemMapper itemMapper;
+    @Autowired
+    private IProductMapper productMapper;
 
-  public List<Category> getCategoryList() {
-    return categoryMapper.getCategoryList();
-  }
-
-  public Category getCategory(String categoryId) {
-    return categoryMapper.getCategory(categoryId);
-  }
-
-  public Product getProduct(String productId) {
-    return productMapper.getProduct(productId);
-  }
-
-  public List<Product> getProductListByCategory(String categoryId) {
-    return productMapper.getProductListByCategory(categoryId);
-  }
-
-  /**
-   * Search product list.
-   *
-   * @param keywords the keywords
-   * @return the list
-   */
-  public List<Product> searchProductList(String keywords) {
-    List<Product> products = new ArrayList<Product>();
-    for (String keyword : keywords.split("\\s+")) {
-      products.addAll(productMapper.searchProductList("%" + keyword.toLowerCase() + "%"));
+    public List<Category> getCategoryList() {
+        return categoryMapper.getCategoryList();
     }
-    return products;
-  }
 
-  public List<Item> getItemListByProduct(String productId) {
-    return itemMapper.getItemListByProduct(productId);
-  }
+    public Category getCategory(final String categoryId) {
+        return categoryMapper.getCategory(categoryId);
+    }
 
-  public Item getItem(String itemId) {
-    return itemMapper.getItem(itemId);
-  }
+    public Product getProduct(final String productId) {
+        return productMapper.getProduct(productId);
+    }
 
-  public boolean isItemInStock(String itemId) {
-    return itemMapper.getInventoryQuantity(itemId) > 0;
-  }
+    public List<Product> getProductListByCategory(final String categoryId) {
+        return productMapper.getProductListByCategory(categoryId);
+    }
+
+    /**
+     * Search product list.
+     *
+     * @param keywords
+     *            the keywords
+     * @return the list
+     */
+    public List<Product> searchProductList(final String keywords) {
+        final List<Product> products = new ArrayList<Product>();
+        for (final String keyword : keywords.split("\\s+")) {
+            products.addAll(productMapper.searchProductList("%" + keyword.toLowerCase() + "%"));
+        }
+        return products;
+    }
+
+    public List<Item> getItemListByProduct(final String productId) {
+        return itemMapper.getItemListByProduct(productId);
+    }
+
+    public Item getItem(final String itemId) {
+        return itemMapper.getItem(itemId);
+    }
+
+    public boolean isItemInStock(final String itemId) {
+        return itemMapper.getInventoryQuantity(itemId) > 0;
+    }
 }

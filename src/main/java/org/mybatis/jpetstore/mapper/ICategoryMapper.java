@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,23 +17,18 @@
 package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
-import java.util.Map;
 
-import org.mybatis.jpetstore.domain.Item;
+import org.mybatis.jpetstore.domain.Category;
 
 /**
- * The Interface ItemMapper.
+ * The Interface CategoryMapper.
  *
  * @author Eduardo Macarron
  */
-public interface ItemMapper {
+public interface ICategoryMapper {
 
-  void updateInventoryQuantity(Map<String, Object> param);
+    List<Category> getCategoryList();
 
-  int getInventoryQuantity(String itemId);
-
-  List<Item> getItemListByProduct(String productId);
-
-  Item getItem(String itemId);
+    Category getCategory(String categoryId);
 
 }

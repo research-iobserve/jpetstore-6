@@ -1,5 +1,6 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright (C) 2010-2017 the original author or authors.
+ *                  2018 iObserve Project (https://www.iobserve-devops.net)
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,7 +17,7 @@
 package org.mybatis.jpetstore.service;
 
 import org.mybatis.jpetstore.domain.Account;
-import org.mybatis.jpetstore.mapper.AccountMapper;
+import org.mybatis.jpetstore.mapper.IAccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,42 +30,44 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AccountService {
 
-  @Autowired
-  private AccountMapper accountMapper;
+    @Autowired
+    private IAccountMapper accountMapper;
 
-  public Account getAccount(String username) {
-    return accountMapper.getAccountByUsername(username);
-  }
-
-  public Account getAccount(String username, String password) {
-    return accountMapper.getAccountByUsernameAndPassword(username, password);
-  }
-
-  /**
-   * Insert account.
-   *
-   * @param account the account
-   */
-  @Transactional
-  public void insertAccount(Account account) {
-    accountMapper.insertAccount(account);
-    accountMapper.insertProfile(account);
-    accountMapper.insertSignon(account);
-  }
-
-  /**
-   * Update account.
-   *
-   * @param account the account
-   */
-  @Transactional
-  public void updateAccount(Account account) {
-    accountMapper.updateAccount(account);
-    accountMapper.updateProfile(account);
-
-    if (account.getPassword() != null && account.getPassword().length() > 0) {
-      accountMapper.updateSignon(account);
+    public Account getAccount(final String username) {
+        return accountMapper.getAccountByUsername(username);
     }
-  }
+
+    public Account getAccount(final String username, final String password) {
+        return accountMapper.getAccountByUsernameAndPassword(username, password);
+    }
+
+    /**
+     * Insert account.
+     *
+     * @param account
+     *            the account
+     */
+    @Transactional
+    public void insertAccount(final Account account) {
+        accountMapper.insertAccount(account);
+        accountMapper.insertProfile(account);
+        accountMapper.insertSignon(account);
+    }
+
+    /**
+     * Update account.
+     *
+     * @param account
+     *            the account
+     */
+    @Transactional
+    public void updateAccount(final Account account) {
+        accountMapper.updateAccount(account);
+        accountMapper.updateProfile(account);
+
+        if (account.getPassword() != null && account.getPassword().length() > 0) {
+            accountMapper.updateSignon(account);
+        }
+    }
 
 }
