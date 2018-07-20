@@ -18,9 +18,12 @@ the JPetStore.
 
 ## Preparation
 
-After cloning our repository, select the `master` or `distributed-with-presentation-layer`
-branch to get the distributed version without Kieker instrumentation. 
-`git checkout distributed-with-presentation-layer`
+After cloning our repository, select one of the branches to get the JPetStore
+variant you want to use. this branch is 
+`git checkout distributed-jpetstore-iobserve-monitoring`
+
+Before compiling make sure you have the proper probes reachable in your
+maven repositories.
 
 Compile JPetStore with
 `mvn clean compile package`

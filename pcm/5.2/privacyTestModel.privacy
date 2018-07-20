@@ -34,21 +34,21 @@
     <component href="jpetstore.repository#_vuR_adquEeeIEPEbplhj7g"/>
   </encapsulatedDataSources>
   <encapsulatedDataSources xsi:type="privacy:EncapsulatedDataSource" dataSource="true">
-    <component href="jpetstore.repository#_67vydquEeeIEPEbplhj7g"/>
+    <component href="jpetstore.repository#_-67vydquEeeIEPEbplhj7g"/>
   </encapsulatedDataSources>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.1/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="personal">
     <operationSignature href="jpetstore.repository#_48h2MJlIEeer_6_V0MXTNA"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.2/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.0/@signatures__OperationInterface.2/@parameters__OperationSignature.1"/>
   </privacyLevels>
   <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
@@ -96,7 +96,7 @@
   <privacyLevels xsi:type="privacy:ParameterPrivacy">
     <parameter href="jpetstore.repository#//@interfaces__Repository.1/@signatures__OperationInterface.7/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
   </privacyLevels>
   <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
@@ -105,22 +105,22 @@
   <privacyLevels xsi:type="privacy:ParameterPrivacy">
     <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.1/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="personal">
     <operationSignature href="jpetstore.repository#__7-a4JoUEeelXf12NKUrpA"/>
   </privacyLevels>
   <privacyLevels xsi:type="privacy:ParameterPrivacy">
     <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.2/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="personal">
     <operationSignature href="jpetstore.repository#_HG_aoJoWEeelXf12NKUrpA"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.2/@signatures__OperationInterface.3/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="personal">
     <operationSignature href="jpetstore.repository#_ggIwUNqlEeeIEPEbplhj7g"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.3/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
   </privacyLevels>
   <privacyLevels xsi:type="privacy:ReturnTypePrivacy">
@@ -129,10 +129,10 @@
   <privacyLevels xsi:type="privacy:ParameterPrivacy">
     <parameter href="jpetstore.repository#//@interfaces__Repository.4/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ReturnTypePrivacy" level="personal">
     <operationSignature href="jpetstore.repository#_qL-NYNquEeeIEPEbplhj7g"/>
   </privacyLevels>
-  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="PERSONAL">
+  <privacyLevels xsi:type="privacy:ParameterPrivacy" level="personal">
     <parameter href="jpetstore.repository#//@interfaces__Repository.5/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
   </privacyLevels>
 </privacy:PrivacyModel>
