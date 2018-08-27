@@ -75,8 +75,19 @@
 		<filter-name>sessionAndTraceRegistrationFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 	<!-- End: Integration of Kieker's SessionAndTraceRegistrationFilter -->
+	
+	<!-- Begin: Integration of AccessControlFilter -->
+	<filter>
+		<filter-name>accessControlFilter</filter-name>
+		<filter-class>org.iobserve.monitoring.probe.servlet.AccessControlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>accessControlFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- End: Integration of AccessControlFilter -->
+	
 	<listener>
 		<listener-class>org.iobserve.monitoring.probe.servlet.DeploymentGeolocationContextListener</listener-class>
 	</listener>

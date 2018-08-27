@@ -58,7 +58,7 @@
 		<url-pattern>*.action</url-pattern>
 	</servlet-mapping>
 
-	<!-- Begin: Integration of Kieker's SessionAndTraceRegistrationFilter -->
+	<!-- Begin: Integration of iObserve SessionAndTraceRegistrationFilter -->
 	<filter>
 		<filter-name>sessionAndTraceRegistrationFilter</filter-name>
 		<filter-class>org.iobserve.monitoring.probe.servlet.SessionAndTraceRegistrationPayloadFilter</filter-class>
@@ -71,8 +71,19 @@
 		<filter-name>sessionAndTraceRegistrationFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-	<!-- End: Integration of Kieker's SessionAndTraceRegistrationFilter -->
+	<!-- End: Integration of iObserve SessionAndTraceRegistrationFilter -->
+	
+	<!-- Begin: Integration of AccessControlFilter -->
+	<filter>
+		<filter-name>accessControlFilter</filter-name>
+		<filter-class>org.iobserve.monitoring.probe.servlet.AccessControlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>accessControlFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- End: Integration of AccessControlFilter -->
+	
 	<listener>
 		<listener-class>org.iobserve.monitoring.probe.servlet.DeploymentGeolocationContextListener</listener-class>
 	</listener>
