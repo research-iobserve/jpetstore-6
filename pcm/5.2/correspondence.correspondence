@@ -3,27 +3,32 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
    xmlns:correspondence="https://www.iobserve-devops.net/model/0.0.3/correspondence">
   <parts>
-    <modelType href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_Q1a_gAA3EeiMaMdqfMnouQ"/>
+    <modelType href="assembly.system#_Q1a_gAA3EeiMaMdqfMnouQ"/>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Frontend">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_ZvkQAAA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_ZvkQAAA3EeiMaMdqfMnouQ"/>
     </entries>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Account">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_ciOk4AA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_ciOk4AA3EeiMaMdqfMnouQ"/>
     </entries>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Catalog">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_dK2EEAA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_dK2EEAA3EeiMaMdqfMnouQ"/>
     </entries>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="JPetStore-Order">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_d_PVcAA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_d_PVcAA3EeiMaMdqfMnouQ"/>
     </entries>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="Database-Account">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_eyO4oAA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_eyO4oAA3EeiMaMdqfMnouQ"/>
     </entries>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="Database-Catalog">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_gXuPwAA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_gXuPwAA3EeiMaMdqfMnouQ"/>
     </entries>
     <entries xsi:type="correspondence:AssemblyEntry" implementationId="Database-Order">
-      <assembly href="Projects/iObserve/experiments/distributed-jpetstore-experiment/pcm/JPetStore/Assembly.system#_hL0mMAA3EeiMaMdqfMnouQ"/>
+      <assembly href="assembly.system#_hL0mMAA3EeiMaMdqfMnouQ"/>
     </entries>
+  </parts>
+  <parts>
+    <modelType href="jpetstore.repository#_zUW8gJk3Eeer_6_V0MXTNA"/>
+    <entries xsi_type="correspondence:ComponentEntry" implementationId="">
+      <component href="jpetstore.repository#_koqHoJk4Eeer_6_V0MXTNA" xsi:type="repository:BasicComponent"/>
   </parts>
 </correspondence:CorrespondenceModel>
