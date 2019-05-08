@@ -45,6 +45,13 @@
 		</site>
 	</distributionManagement>
 
+	<repositories>
+		<repository>
+			<id>kieker</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+        </repositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>commons-logging</groupId>
