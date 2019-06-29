@@ -1,7 +1,9 @@
 #!/bin/bash
 
 function terminate() {
+	echo "Terminating..."
 	catalina.sh stop
+	echo "Done."
 }
 
 trap terminate SIGINT SIGTERM EXIT
@@ -16,18 +18,16 @@ echo "Logger $LOGGER"
 
 echo "$LOGGER logger" >> /etc/hosts
 
+if [ "$LOCATION" != "" ] ; then
+	echo "$LOCATION" >> /usr/local/tomcat/country-code.txt
+fi
+
 cat /server.xml.template | sed "s/%HOSTNAME%/$HOSTNAME/g" > $CATALINA_HOME/conf/server.xml
 
 catalina.sh start
 
-LOG=/usr/local/tomcat/logs/catalina.out
-
-while [ ! -f $LOG ] ; do
-	echo log
+while true ; do
 	sleep 1
 done
-tail -f $LOG
-#while true ; do
-#        sleep 1
-#done
+
 # end
