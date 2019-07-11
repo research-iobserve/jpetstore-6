@@ -100,6 +100,13 @@ public class AccountActionBean extends AbstractActionBean {
         this.account.setUsername(username);
     }
 
+    public String getRepeatedPassword() {
+        return this.account.getPassword();
+    }
+
+    public void setRepeatedPassword(final String password) {
+    }
+
     public String getPassword() {
         return this.account.getPassword();
     }
@@ -110,9 +117,13 @@ public class AccountActionBean extends AbstractActionBean {
      * @param password
      *            password for the account
      */
-    @Validate(required = true, on = { "signon", "newAccount", "editAccount" })
+    @Validate(required = true, on = { "signon", "newAccount" })
     public void setPassword(final String password) {
-        this.account.setPassword(password);
+        if (password != null) {
+            if (!password.isEmpty()) {
+                this.account.setPassword(password);
+            }
+        }
     }
 
     public List<Product> getMyList() {
@@ -172,8 +183,13 @@ public class AccountActionBean extends AbstractActionBean {
      * @throws IOException
      */
     public Resolution editAccount() {
+        final String username = this.account.getUsername();
         this.accountService.updateAccount(this.account);
-        this.account = this.accountService.getAccount(this.account.getUsername());
+        this.account = this.accountService.getAccount(username);
+        if (this.account == null) {
+            AccountActionBean.LOG.error("Unkown accout after update." + username);
+            this.clear();
+        }
         this.myList = this.catalogService.getProductListByCategory(this.account.getFavouriteCategoryId());
         return new RedirectResolution(CatalogActionBean.class);
     }
@@ -194,7 +210,6 @@ public class AccountActionBean extends AbstractActionBean {
      * @return the resolution
      */
     public Resolution signon() {
-
         this.account = this.accountService.getAccount(this.getUsername(), this.getPassword());
 
         if (this.account == null) {
@@ -230,7 +245,7 @@ public class AccountActionBean extends AbstractActionBean {
      * @return true, if is authenticated
      */
     public boolean isAuthenticated() {
-        return this.authenticated && (this.account != null) && (this.account.getUsername() != null);
+        return this.authenticated && this.account != null && this.account.getUsername() != null;
     }
 
     /**

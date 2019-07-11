@@ -99,17 +99,17 @@ public abstract class AbstractService {
      * @return result code
      */
     protected <T> int postOperation(final String url, final T object) {
-        final StringWriter sw = new StringWriter();
+        final StringWriter writer = new StringWriter();
 
         final ObjectMapper mapper = new ObjectMapper();
         try {
-            mapper.writeValue(sw, object);
+            mapper.writeValue(writer, object);
 
             final HttpClient httpClient = HttpClientBuilder.create().build();
 
             try {
                 final HttpPost request = new HttpPost(url);
-                final StringEntity params = new StringEntity(sw.toString());
+                final StringEntity params = new StringEntity(writer.toString());
                 request.addHeader("content-type", "application/json");
                 request.setEntity(params);
                 final org.apache.http.HttpResponse response = httpClient.execute(request);

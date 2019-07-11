@@ -27,7 +27,7 @@
 	<table>
 		<tr>
 			<td>User ID:</td>
-			<td>${actionBean.username}</td>
+			<td>${actionBean.username}<input type="hidden" name="username" value="${actionBean.username}"/></td>
 		</tr>
 		<tr>
 			<td>New password:</td>

@@ -66,7 +66,6 @@ public class AccountService extends AbstractService {
      *            the account
      */
     public void insertAccount(final Account account) {
-        AbstractService.LOG.info("insert " + account.toString());
         this.postOperation(AccountService.INSERT_ACCOUNT_REQUEST, account);
     }
 
@@ -77,7 +76,6 @@ public class AccountService extends AbstractService {
      *            the account
      */
     public void updateAccount(final Account account) {
-        AbstractService.LOG.info("update " + account.toString());
         this.postOperation(AccountService.UPDATE_ACCOUNT_REQUEST, account);
     }
 
