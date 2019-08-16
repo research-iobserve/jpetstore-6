@@ -102,7 +102,11 @@ public class AccountActionBean extends AbstractActionBean {
 
     @Validate(required = true, on = { "signon", "newAccount"})
     public void setPassword(final String password) {
-        account.setPassword(password);
+         if (password != null) {
+            if (!password.isEmpty()) {
+                this.account.setPassword(password);
+            }
+        }
     }
 
     public List<Product> getMyList() {
