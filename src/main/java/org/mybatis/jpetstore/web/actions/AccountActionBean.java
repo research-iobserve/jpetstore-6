@@ -89,11 +89,18 @@ public class AccountActionBean extends AbstractActionBean {
         account.setUsername(username);
     }
 
+    public String getRepeatedPassword() {
+        return this.account.getPassword();
+    }
+
+    public void setRepeatedPassword(final String password) {
+    }
+    
     public String getPassword() {
         return account.getPassword();
     }
 
-    @Validate(required = true, on = { "signon", "newAccount", "editAccount" })
+    @Validate(required = true, on = { "signon", "newAccount"})
     public void setPassword(final String password) {
         account.setPassword(password);
     }
