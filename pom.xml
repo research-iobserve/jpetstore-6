@@ -192,7 +192,7 @@
 						</dependency>
 					</dependencies>
 					<configuration>
-						<header>${project.basedir}/license.txt</header>
+						<header>${workspace}/license.txt</header>
 						<excludes>
 							<exclude>**/*.ctrl</exclude>
 							<exclude>**/*.dat</exclude>
@@ -244,7 +244,7 @@
 					<configuration>
 						<lineEnding>LF</lineEnding>
 						<encoding>UTF-8</encoding>
-						<configFile>${project.basedir}/eclipse-code-formatter.xml</configFile>
+						<configFile>${workspace}/qa-configurations/eclipse-code-formatter.xml</configFile>
 					</configuration>
 					<executions>
 						<execution>
@@ -252,7 +252,7 @@
 								<goal>format</goal>
 							</goals>
 							<configuration>
-								<configFile>${project.basedir}/eclipse-code-formatter.xml</configFile>
+								<configFile>${workspace}/qa-configurations/eclipse-code-formatter.xml</configFile>
 							</configuration>
 						</execution>
 					</executions>
@@ -270,11 +270,12 @@
 					<artifactId>maven-checkstyle-plugin</artifactId>
 					<version>2.17</version>
 					<configuration>
-						<configLocation>${project.basedir}/checkstyle-rules.xml</configLocation>
+						<configLocation>${workspace}/qa-configurations/checkstyle-rules.xml</configLocation>
 						<encoding>UTF-8</encoding>
 						<consoleOutput>true</consoleOutput>
-						<failsOnError>true</failsOnError>
+						<failsOnError>false</failsOnError>
 						<linkXRef>false</linkXRef>
+						<propertyExpansion>config_loc=${workspace}</propertyExpansion>
 					</configuration>
 					<executions>
 						<execution>
