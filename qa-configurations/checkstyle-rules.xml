@@ -43,7 +43,7 @@
 
 
 	<module name="SuppressionFilter">
-		<property name="file" value="suppressions.xml" />
+		<property name="file" value="${config_loc}/qa-configurations/suppressions.xml" />
 	</module> 
 
 	<!-- !________________________________________________________________________________________ 
@@ -55,7 +55,7 @@
 	<!-- See http://checkstyle.sf.net/config_header.html ! -->
 	<!-- Default: OFF -->
 	<module name="RegexpHeader">
-		<property name="headerFile" value="java-header.sed" />
+		<property name="headerFile" value="${config_loc}/qa-configurations/java-header.sed" />
 		<property name="charset" value="UTF-8" />
 		<!-- property name="header" value=""/ -->
 		<property name="multiLines" value="" />
