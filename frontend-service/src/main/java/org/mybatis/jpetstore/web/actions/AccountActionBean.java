@@ -47,7 +47,7 @@ public class AccountActionBean extends AbstractActionBean {
 
     private static final long serialVersionUID = 5499663666155758178L;
 
-    private final static Logger LOG = Logger.getLogger(AccountActionBean.class);
+    private static final Logger LOG = Logger.getLogger(AccountActionBean.class);
 
     private static final String NEW_ACCOUNT = "/WEB-INF/jsp/account/NewAccountForm.jsp";
     private static final String EDIT_ACCOUNT = "/WEB-INF/jsp/account/EditAccountForm.jsp";

@@ -20,6 +20,11 @@ import javax.servlet.ServletException;
 
 import org.mybatis.jpetstore.service.OrderService;
 
+/**
+ * Abstract order servlet.
+ *
+ * @author Reiner Jung
+ */
 public abstract class AbstractOrderServlet extends AbstractServlet<OrderService> {
 
     /**

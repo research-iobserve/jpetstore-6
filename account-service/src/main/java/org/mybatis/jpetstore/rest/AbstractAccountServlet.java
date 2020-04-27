@@ -20,6 +20,9 @@ import javax.servlet.ServletException;
 
 import org.mybatis.jpetstore.service.AccountService;
 
+/**
+ * @author Reiner Jung
+ */
 public abstract class AbstractAccountServlet extends AbstractServlet<AccountService> {
 
 	/**

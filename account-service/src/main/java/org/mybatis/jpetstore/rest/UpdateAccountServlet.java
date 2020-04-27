@@ -38,7 +38,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class UpdateAccountServlet extends AbstractAccountServlet {
     private static final long serialVersionUID = 1L;
 
-    private final static Logger LOG = Logger.getLogger(UpdateAccountServlet.class);
+    private static final Logger LOG = Logger.getLogger(UpdateAccountServlet.class);
 
     /**
      * @see HttpServlet#HttpServlet()

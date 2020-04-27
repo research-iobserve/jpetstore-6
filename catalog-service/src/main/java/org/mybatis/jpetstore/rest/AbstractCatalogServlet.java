@@ -1,6 +1,7 @@
 /**
  *    Copyright (C) 2017 iObserve Project (https://www.iobserve-devops.net)
  *
+ *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
  *    You may obtain a copy of the License at
@@ -25,10 +26,15 @@ import org.mybatis.jpetstore.service.CatalogService;
 public abstract class AbstractCatalogServlet extends AbstractServlet<CatalogService> {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -7152202991760854415L;
 
+	/**
+	 * Initialize catalog servlet.
+	 *
+	 * @throws ServletException on servlet errors
+	 */
 	public void init() throws ServletException {
 		super.init(CatalogService.class.getSimpleName());
 	}

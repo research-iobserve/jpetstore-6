@@ -1,6 +1,7 @@
 /***************************************************************************
  * Copyright (C) 2017 iObserve Project (https://www.iobserve-devops.net)
  *
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,16 +32,25 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.log4j.Logger;
 
+/**
+ * @author Reiner Jung
+ */
 public abstract class AbstractService {
 
-    protected final static Logger LOG = Logger.getLogger(CatalogService.class);
-    
-    protected final static String getDomain() {
+    protected static final Logger LOG = Logger.getLogger(CatalogService.class);
+
+    /**
+     * Get the jpetstore domain form JPETSTORE_DOMAIN environment variable.
+     *
+     * @return returns the variable value or an empty string
+     */
+    protected static final String getDomain() {
     	String domain = System.getenv("JPETSTORE_DOMAIN");
-    	if (domain == null)
+    	if (domain == null) {
     		return "";
-    	else
+    	} else {
     		return domain;
+	}
     }
 
     /**
@@ -50,6 +60,7 @@ public abstract class AbstractService {
      *            query url
      * @param clazz
      *            type of the object to be requested
+     * @param <T> value type
      * @return returns the object or null on error
      */
     protected <T> T getSingleValue(final String url, final Class<T> clazz) {
@@ -80,6 +91,7 @@ public abstract class AbstractService {
      *            query url
      * @param clazz
      *            type of the objects to be requested
+     * @param <T> result value type
      * @return returns the list or null on error
      */
     protected <T> List<T> getMultipleValues(final String url, final Class<T> clazz) {
@@ -111,6 +123,8 @@ public abstract class AbstractService {
      *            where
      * @param object
      *            the object
+     * @param <T> object type to be processed
+     *
      * @return result code
      */
     protected <T> int postOperation(final String url, final T object) {
