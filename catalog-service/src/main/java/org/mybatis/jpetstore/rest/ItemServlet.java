@@ -1,6 +1,7 @@
 /***************************************************************************
  * Copyright (C) 2017 iObserve Project (https://www.iobserve-devops.net)
  *
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +40,7 @@ public class ItemServlet extends AbstractCatalogServlet {
      *
      */
     private static final long serialVersionUID = 2513685208882345257L;
-    private final static Logger LOG = Logger.getLogger(ItemServlet.class);
+    private static final Logger LOG = Logger.getLogger(ItemServlet.class);
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

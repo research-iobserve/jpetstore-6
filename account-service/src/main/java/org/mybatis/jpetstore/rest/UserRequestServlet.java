@@ -30,13 +30,15 @@ import org.mybatis.jpetstore.domain.Account;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Servlet implementation class AccountRestServlet
+ * Servlet implementation class AccountRestServlet.
+ *
+ * @author Reiner Jung
  */
 @WebServlet("/request-user")
 public class UserRequestServlet extends AbstractAccountServlet {
     private static final long serialVersionUID = 1L;
 
-    private final static Logger LOG = Logger.getLogger(UserRequestServlet.class);
+    private static final Logger LOG = Logger.getLogger(UserRequestServlet.class);
 
     /**
      * @see HttpServlet#HttpServlet()

@@ -36,6 +36,11 @@ public interface IAccountMapper {
      */
     Account getAccountByUsername(String username);
 
+    /**
+     * Collect all accounts.
+     *
+     * @return all accounts.
+     */
     Collection<Account> getAllAccounts();
 
     /**

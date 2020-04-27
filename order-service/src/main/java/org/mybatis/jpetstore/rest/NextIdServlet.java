@@ -39,7 +39,7 @@ public class NextIdServlet extends AbstractOrderServlet {
      *
      */
     private static final long serialVersionUID = 2513685208882345257L;
-    private final static Logger LOG = Logger.getLogger(NextIdServlet.class);
+    private static final Logger LOG = Logger.getLogger(NextIdServlet.class);
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

@@ -41,7 +41,7 @@ public class OrderByIdServlet extends AbstractOrderServlet {
      */
     private static final long serialVersionUID = 2738762076073852467L;
 
-    private final static Logger LOG = Logger.getLogger(OrderByIdServlet.class);
+    private static final Logger LOG = Logger.getLogger(OrderByIdServlet.class);
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

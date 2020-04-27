@@ -30,13 +30,15 @@ import org.mybatis.jpetstore.domain.Order;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Servlet implementation class AccountRestServlet
+ * Servlet implementation class AccountRestServlet.
+ *
+ * @author Reiner Jung
  */
 @WebServlet("/insert-account")
 public class InsertOrderServlet extends AbstractOrderServlet {
     private static final long serialVersionUID = 1L;
 
-    private final static Logger LOG = Logger.getLogger(InsertOrderServlet.class);
+    private static final Logger LOG = Logger.getLogger(InsertOrderServlet.class);
 
     /**
      * @see HttpServlet#HttpServlet()
