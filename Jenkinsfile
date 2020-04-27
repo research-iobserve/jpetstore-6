@@ -21,7 +21,7 @@ pipeline {
 					recordIssues enabledForFailure: true, tools: [mavenConsole(), java(), javaDoc()]
 					recordIssues enabledForFailure: true, tool: checkStyle()
 //					recordIssues enabledForFailure: true, tool: spotBugs()
-//					recordIssues enabledForFailure: true, tool: pmdParser()
+					recordIssues enabledForFailure: true, tool: pmdParser()
 				}
 			}
 		}
