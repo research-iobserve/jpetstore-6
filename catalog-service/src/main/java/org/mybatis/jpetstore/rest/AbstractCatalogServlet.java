@@ -19,6 +19,9 @@ import javax.servlet.ServletException;
 
 import org.mybatis.jpetstore.service.CatalogService;
 
+/**
+ * @author Reiner Jung
+ */
 public abstract class AbstractCatalogServlet extends AbstractServlet<CatalogService> {
 
 	/**
